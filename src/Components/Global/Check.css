@@ -1,0 +1,7 @@
+.check {
+  @apply flex flex-col justify-center items-center max-w-[350px] w-full p-[30px] rounded-[40px] bg-textColor text-white;
+}
+
+.check-photoName {
+  @apply text-3xl font-bold mb-[40px] p-[10px] px-[20px] rounded-elementRounded bg-white text-textColor shadow-xl;
+}

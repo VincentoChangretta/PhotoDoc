@@ -1,0 +1,10 @@
+.img-four{
+    @apply max-w-[500px] flex flex-wrap gap-[20px] justify-center p-[40px] rounded-elementRounded bg-white shadow-cardShadow relative z-10
+}
+.img-big {
+    @apply max-w-[480px] absolute top-[50px] right-[-55%] p-[40px] rounded-elementRounded bg-white shadow-cardShadow rotate-[8deg]
+}
+
+.img-big-left{
+    @apply max-w-[480px] absolute top-[50px] left-[-55%] p-[40px] rounded-elementRounded bg-white shadow-reverseCardShadow rotate-[-8deg]
+}

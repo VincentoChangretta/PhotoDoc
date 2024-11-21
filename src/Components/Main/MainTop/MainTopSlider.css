@@ -1,0 +1,41 @@
+.img-box {
+    @apply relative z-20 w-[220px] h-[700px] bg-cover bg-center bg-no-repeat transition-all duration-50ms rounded-elementRounded overflow-hidden cursor-pointer shadow-xl;
+}
+
+.img-box::after {
+    @apply content-[''] absolute right-0 left-0 bottom-0 h-[250px] bg-gradient-to-t from-shadowColor to-transparent
+}
+
+.img-box__block {
+    @apply translate-x-[-100%] transition-all duration-500
+}
+
+.img-box:not(.active-img) .img-box__block {
+    @apply content-[''] absolute z-10 translate-x-0 left-0 bottom-[50px] w-[180px] h-[180px]
+}
+
+.img-box-1 {
+    @apply w-[600px] transition-all duration-50ms
+}
+
+.active-img {
+    @apply grow-[3]
+}
+
+.img-box-1-cover {
+    @apply w-[220px]
+}
+
+.img-box__block-text {
+    @apply absolute bottom-0 text-3xl px-[10px] py-[20px] bg-textColorHover text-white;
+    writing-mode: vertical-rl;
+    transition: .5s;
+}
+
+.img-box__price {
+    @apply absolute z-10 right-0 bottom-[50px] p-[20px] w-[400px] backdrop-blur-[30px] text-3xl text-white transition-transform duration-[.5s] translate-x-[400px] rounded-[50px] px-[50px] border-2 border-glassBorderColor shadow-xl;
+}
+
+.img-box.active-img .img-box__price {
+    @apply absolute translate-x-[50px]
+}

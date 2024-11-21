@@ -1,0 +1,7 @@
+.order-information {
+    @apply relative max-w-fit w-full p-[30px] py-[60px] bg-textColor text-invertedTextColor rounded-elementRounded shadow-cardShadow
+}
+
+.order-information__text {
+    @apply max-w-fit bg-invertedTextColor text-textColor rounded-elementRounded py-[5px] px-[15px] text-xl
+}

@@ -1,0 +1,7 @@
+.photodoc-bg{
+    @apply relative w-fit flex flex-wrap gap-[20px] p-[30px] bg-white shadow-lg rounded-elementRounded
+}
+.photodoc-bg__electro{
+    @apply absolute top-[-15px] right-[-25px] rotate-[15deg] py-[5px] px-[15px] rounded-elementRounded text-xl font-bold bg-textColor text-white
+}
+

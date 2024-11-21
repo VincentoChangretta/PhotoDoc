@@ -1,0 +1,20 @@
+.picture-retoucher {
+    @apply relative max-w-[550px] cursor-pointer rounded-elementRounded overflow-hidden shadow-xl;
+}
+
+.picture-retoucher .img {
+    @apply flex select-none;
+}
+
+.retouched {
+    @apply absolute inset-0;
+    clip-path: inset(0 0 0 50%);
+}
+
+.line {
+    @apply absolute top-0 bottom-0 w-[5px] bg-white cursor-pointer select-none;
+}
+
+.line::before {
+    @apply content-[''] absolute top-[50%] left-[50%] w-[30px] h-[30px] translate-50 bg-white border-4 border-solid border-white rounded-full
+}

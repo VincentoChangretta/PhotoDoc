@@ -1,0 +1,9 @@
+.delivery-time__select{
+    @apply flex flex-col gap-[5px] absolute z-[998] top-[0] right-[-10px] left-[-10px] p-[10px] pt-[60px] pb-[20px] bg-invertedTextColor rounded-elementRounded shadow-xl
+}
+.delivery-time__select-item{
+    @apply relative py-[10px] px-[15px] rounded-elementRounded cursor-pointer
+}
+.photodoc-deliveryTime{
+    @apply max-w-fit relative z-[999] py-[10px] px-[25px] pr-[40px] bg-textColor text-invertedTextColor rounded-elementRounded cursor-pointer;
+}

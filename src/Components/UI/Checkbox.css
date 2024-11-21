@@ -1,0 +1,20 @@
+.checkbox{
+    @apply absolute z-10 w-[1px] h-[1px] overflow-hidden;
+    clip: rect(0 0 0 0);
+}
+
+.check-style {
+    @apply absolute z-10 top-[9px] left-[0px] w-[16px] h-[16px] rounded-[5px] border-2 border-textColor cursor-pointer
+}
+
+.check-style.active::before {
+    @apply content-[''] absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[10px] h-[10px] rounded-[2px] bg-textColor;
+}
+
+.checkbox:disabled .check-style {
+    @apply border-[#ccc]
+}
+
+.checkbox:disabled+.check-style::before {
+    @apply content-[""] absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[10px] h-[10px] bg-[#ccc];
+}

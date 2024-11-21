@@ -1,0 +1,21 @@
+.calendar {
+  @apply absolute z-[1000] top-0 left-0 p-[20px] pt-[105px] rounded-elementRounded border-none overflow-hidden shadow-xl select-none;
+}
+
+.react-calendar__tile--active {
+  @apply bg-textColor text-invertedTextColor rounded-elementRounded;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  @apply bg-textColorHover ;
+}
+
+.react-calendar__tile--now {
+  @apply bg-textColor text-invertedTextColor;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  @apply bg-textColorHover text-invertedTextColor;
+}

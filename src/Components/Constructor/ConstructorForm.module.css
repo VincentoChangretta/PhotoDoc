@@ -1,0 +1,7 @@
+.form{
+    @apply  w-full p-[30px] rounded-elementRounded backdrop-blur-[100px] bg-gray shadow-cardShadow bg-cover bg-center
+}
+
+.form_block{
+    @apply  flex flex-col max-w-[500px] w-full gap-[20px] p-[30px]  rounded-elementRounded bg-grayHover
+}

@@ -1,0 +1,15 @@
+.saved-input {
+  @apply max-w-[280px] flex flex-col items-end justify-between bg-invertedTextColor text-textColor mt-[15px] py-[10px] px-[20px] rounded-elementRounded;
+}
+
+.cloth-input {
+  @apply py-[5px] px-[20px] mb-[15px] transition-all rounded-elementRounded text-xl;
+}
+
+.cloth-input::placeholder {
+  @apply text-lg;
+}
+
+.cloth-text {
+  @apply max-w-[280px] mb-[5px]  text-xl rounded-elementRounded  w-full;
+}

@@ -1,0 +1,4 @@
+.input-box{
+    @apply relative w-full bg-white text-textColor rounded-elementRounded shadow-xl
+}
+

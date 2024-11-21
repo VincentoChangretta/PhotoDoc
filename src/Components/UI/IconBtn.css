@@ -1,0 +1,7 @@
+.icon-btn {
+    @apply w-[60px] h-[60px] flex justify-center items-center relative text-2xl font-bold bg-textColor text-white rounded-full overflow-hidden hover:before:top-0
+}
+
+.icon-btn::before {
+    @apply content-[''] absolute right-0 left-0 bottom-0 top-[100%] bg-textColorHover transition-all duration-[.4s]
+}
