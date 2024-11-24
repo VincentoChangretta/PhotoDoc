@@ -4,9 +4,10 @@ import { promoCodeModalContext } from '../Navigation';
 import { promoCodeData } from '../../../public/AppData';
 import { useDispatch } from 'react-redux';
 import { photoDocPromoCodeAction } from '../../Redux/currentPromoCodeReducer';
+import { promoCodeImg } from '../../../public/ImgData';
+import { ModalCloser } from './ModalCloser';
 
 export const PromoCode = () => {
-
     const { promoCodeModal, setPromoCodeModal } = useContext(promoCodeModalContext)
     const modalRef = useRef(null)
     const [promoCodeValue, setPromoCodeValue] = useState(null)
@@ -51,8 +52,13 @@ export const PromoCode = () => {
 
     return (
         <div className='flex justify-center items-center fixed z-[2000] inset-0 backdrop-blur '>
-            <div ref={modalRef} className='relative flex flex-col justify-center items-center max-w-[700px] w-full p-[50px] bg-textColor rounded-elementRounded shadow-2xl'>
-                <h3 className='max-w-[550px] mb-[50px] text-4xl text-center font-extrabold text-invertedTextColor '>
+
+            <div
+                ref={modalRef}
+                className='relative flex flex-col items-center  max-w-[700px] w-full px-[30px] py-[50px] bg-textColor rounded-elementRounded shadow-2xl'
+            >
+                <ModalCloser closeModal={setPromoCodeModal} />
+                <h3 className='max-w-[450px] mb-[30px] text-3xl text-center font-extrabold text-invertedTextColor '>
                     Активируйте промокод и получайте приятные скидки!
                 </h3>
                 <Input
@@ -62,7 +68,7 @@ export const PromoCode = () => {
                     textCenter={true}
                     setPromoCodeValue={setPromoCodeValue}
                 />
-                <button className='btn darkened' onClick={handleActivate}>Активировать</button>
+                <button className='btn inverted' onClick={handleActivate}>Активировать</button>
                 {
                     notFound &&
                     <p className='absolute bottom-[20px] left-[50%] translate-x-[-50%] text-invertedTextColor'>

@@ -8,7 +8,7 @@ export const Header = () => {
         <header>
             <div className='container'>
                 <div className="inner py-[35px]">
-                    <div className='inner max-w-[750px] w-full'>
+                    <div className='inner max-w-[900px] w-full'>
                         <Logo />
                         <ul className='flex gap-[30px] select-none'>
                             {navArr.map(navItem => (

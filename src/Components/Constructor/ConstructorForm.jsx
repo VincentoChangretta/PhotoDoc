@@ -9,6 +9,7 @@ import { faCheck, faCircleInfo, faSave } from '@fortawesome/free-solid-svg-icons
 import { PhotoDocDelivery } from './PhotoDocDelivery';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentClientPhotoCodeCreator } from '../../Redux/currentCliendPhotoCodeReducer';
+import { TextArea } from '../UI/TextArea';
 
 export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoModal }) => {
 
@@ -25,7 +26,6 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
 
     useEffect(() => {
         if (currentPhotoStore.photoInfo.info.id !== prevPhoto?.id) {
-            console.log('nulled saved code')
             dispatch(currentClientPhotoCodeCreator(null))
             // меняем сохраненный код фотографии 
         }
@@ -76,42 +76,47 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                     </div>
                     <div className={classes['form_block']}>
                         {currentPhotoStore.type.physicalType && <PhotoDocDelivery />}
-                        <button
-                            type='button'
-                            className='btn'
-                            onClick={e => !currentPhotoCode ? (e.stopPropagation(), setSavePhotoModal(true)) : null}>
-                            {currentPhotoCode
-                                ? <>
-                                    <span>Фото будет сохранено</span>
-                                    <FontAwesomeIcon className='text-xl ml-[10px]' icon={faCheck} />
-                                </>
-                                : <>
-                                    <span>Сохранить фото в базу</span>
-                                    <FontAwesomeIcon className='text-xl ml-[10px]' icon={faSave} />
-                                </>
-                            }
-                        </button>
-                        <button
-                            type='button'
-                            className='btn'
-                            onClick={e => (e.stopPropagation(), setInfoModal(true))}
-                        >
-                            Информация о заказе
-                            <FontAwesomeIcon className='ml-[10px] text-xl' icon={faCircleInfo} />
-                        </button>
+                        <TextArea placeholder="Сообщение (необязательно)" />
                     </div>
-                    <div className='flex flex-col gap-[10px] justify-end'>
-                        <CheckboxVerification
-                            errorStatus={privacyError}
-                            stateChanger={setPrivacyCheckbox}
-                        />
-                        <CheckboxVerification
-                            errorStatus={infoError}
-                            stateChanger={setInfoPrivacyCheckbox}
-                            infoCheckbox={true}
-                        />
-                        <button className='btn darkened' type='submit'>Заказать</button>
-                        {fetchedDescr && <p>Заказ успешно оформлен!</p>}
+                    <div className='flex flex-col justify-between'>
+                        <div className='flex flex-col gap-[15px] p-[30px] bg-grayHover rounded-elementRounded'>
+                            <button
+                                type='button'
+                                className='btn'
+                                onClick={e => !currentPhotoCode ? (e.stopPropagation(), setSavePhotoModal(true)) : null}>
+                                {currentPhotoCode
+                                    ? <>
+                                        <span>Фото будет сохранено</span>
+                                        <FontAwesomeIcon className='text-xl ml-[10px]' icon={faCheck} />
+                                    </>
+                                    : <>
+                                        <span>Сохранить фото в базу</span>
+                                        <FontAwesomeIcon className='text-xl ml-[10px]' icon={faSave} />
+                                    </>
+                                }
+                            </button>
+                            <button
+                                type='button'
+                                className='btn'
+                                onClick={e => (e.stopPropagation(), setInfoModal(true))}
+                            >
+                                Информация о заказе
+                                <FontAwesomeIcon className='ml-[10px] text-xl' icon={faCircleInfo} />
+                            </button>
+                        </div>
+                        <div className='flex flex-col gap-[10px] justify-end'>
+                            <CheckboxVerification
+                                errorStatus={privacyError}
+                                stateChanger={setPrivacyCheckbox}
+                            />
+                            <CheckboxVerification
+                                errorStatus={infoError}
+                                stateChanger={setInfoPrivacyCheckbox}
+                                infoCheckbox={true}
+                            />
+                            <button className='btn darkened' type='submit'>Заказать</button>
+                            {fetchedDescr && <p>Заказ успешно оформлен!</p>}
+                        </div>
                     </div>
                 </div>
             </form>

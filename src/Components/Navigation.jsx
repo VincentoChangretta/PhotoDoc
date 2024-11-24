@@ -6,6 +6,7 @@ import { PATHNAMES } from '../../public/AppData';
 import { Constructor } from './Constructor/Constructor';
 import { PromoCode } from './Global/PromoCode';
 import { Order } from './Order/Order';
+import { Recommendations } from './Recommendations/Recommendations';
 
 export const promoCodeModalContext = createContext("no provider")
 
@@ -17,6 +18,7 @@ export const Navigation = () => {
                 <Routes>
                     <Route path='/' element={<Main />} />
                     <Route path={PATHNAMES.photoDocument} element={<PhotoDocument />} />
+                    <Route path={PATHNAMES.recommendations} element={<Recommendations />} />
                     <Route path={PATHNAMES.constructor} element={<Constructor />} />
                     <Route path={PATHNAMES.order} element={<Order />} />
                 </Routes>

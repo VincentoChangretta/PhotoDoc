@@ -8,5 +8,28 @@ import retouch2 from "../src/Images/retouch2.jpg";
 import girlDoc from "../src/Images/girlDoc.jpg";
 import formImg from "../src/Images/formImg.jpg";
 import girlComp from "../src/Images/girlcomp.webp";
+import recPhoto from "../src/Images/recPhoto.jpg";
+import promoCodeImg from "../src/Images/promocode2.jpg";
+import FirstStep from "../src/Images/firstStep.jpg";
+import SecondStep from "../src/Images/secondStep.jpg";
+import ThirdStep from "../src/Images/thirdStep.jpg";
+import FourthStep from "../src/Images/fourthStep.jpg";
 
-export { docImg, retImg, restImg, examplesImg, photo4x6Img, retouch1, retouch2, girlDoc, formImg , girlComp};
+export {
+  docImg,
+  retImg,
+  restImg,
+  examplesImg,
+  photo4x6Img,
+  retouch1,
+  retouch2,
+  girlDoc,
+  formImg,
+  girlComp,
+  recPhoto,
+  promoCodeImg,
+  FirstStep,
+  SecondStep,
+  ThirdStep,
+  FourthStep
+};

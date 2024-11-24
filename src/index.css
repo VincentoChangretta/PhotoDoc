@@ -213,6 +213,10 @@ section .title-box {
   @apply mb-[80px];
 }
 
+section .title-box.withoutMargin {
+  @apply mb-[30px]
+}
+
 section .title-box h2 {
   @apply text-5xl font-bold mb-[30px] leading-[60px];
 }
@@ -229,6 +233,10 @@ section .section-content h4 {
   @apply underline;
 }
 
-input {
+input, textarea {
   @apply w-full text-lg outline-none;
+}
+
+.counter-item{
+  @apply flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-textColor text-invertedTextColor text-xl font-extrabold shrink-0
 }

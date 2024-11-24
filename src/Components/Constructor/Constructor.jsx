@@ -6,7 +6,7 @@ import { Check } from '../Global/Check';
 import { Link } from 'react-router-dom';
 import { faFaceSmileWink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CLOTH_INPUT_LOCALSTORE, CURRENT_ELECTRO_QUANTITY, CURRENT_PHYSICAL_QUANTITY, FIRST_OPTIONS, PATHNAMES, PHOTODOC_ELECTRO_QUANTITY, PHOTODOC_INITIAL_ELECTRO_QUANTITY, PHOTODOC_PHYSICAL_QUANTITY, SIZE_9x12 } from '../../../public/AppData';
+import { CLOTH_INPUT_LOCALSTORE, CURRENT_ELECTRO_QUANTITY, CURRENT_PHYSICAL_QUANTITY, FIRST_OPTIONS, PATHNAMES, PHOTODOC_ELECTRO_QUANTITY, PHOTODOC_INITIAL_ELECTRO_QUANTITY, PHOTODOC_PHYSICAL_QUANTITY, RUBLE, SIZE_9x12 } from '../../../public/AppData';
 import { setCurrentPhotoDocQuantity } from '../../Redux/currentPhotoDocQuantityReducer';
 import { setPreviousPhotoAction } from '../../Redux/previousPhotoDocReducer';
 import { currentPhotoColoredAction } from '../../Redux/currentPhotoColors';
@@ -65,7 +65,7 @@ export const Constructor = () => {
             physicalType
         }
     }
-
+    
     if (!currentSize) {
         return (
             <div className='flex items-center justify-center fixed inset-0 bg-white'>
@@ -81,7 +81,7 @@ export const Constructor = () => {
     return (
         <section className='relative mb-0'>
             <div className="container">
-                <div className="title-box text-center">
+                <div className="title-box withoutMargin text-center">
                     <h2>Конструктор заказа</h2>
                     <h3>Выберите количество и тип фотографий</h3>
                 </div>

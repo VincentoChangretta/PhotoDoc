@@ -64,9 +64,9 @@ export const PhotoDocDelivery = () => {
                     required={true}
                 />
             </label>
-            <div className="relative p-[10px] bg-invertedTextColor rounded-elementRounded max-w-fit">
+            <div className="relative p-[10px] bg-invertedTextColor rounded-elementRounded">
                 <p className='relative z-[1010] mb-[10px] text-center'>Дата и время доставки</p>
-                <div className="flex gap-[15px]">
+                <div className="flex justify-between p-[10px] gap-[15px] rounded-elementRounded bg-grayHover ">
                     <div
                         className="photodoc-deliveryDate"
                         onClick={e => {

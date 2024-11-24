@@ -50,19 +50,21 @@ export const Check = ({ photoDoc, currentSize, currentPhotoStore }) => {
     if (photoDoc) {
         return (
             <div className='check grow basis-0 '>
-                <div className='text-center mb-[20px]'>
-                    <h3 className='text-3xl font-bold mb-[20px]'>Чек</h3>
-                    <h2 className='check-photoName'>
-                        {currentSize.name}
-                    </h2>
+                <div className='mb-[20px]'>
+                    <div className='text-center'>
+                        <h3 className='text-3xl font-bold mb-[20px]'>Чек</h3>
+                        <h2 className='check-photoName'>
+                            {currentSize.name}
+                        </h2>
+                    </div>
                     <div className='mb-[20px] '>
                         <span className='font-bold text-xl'>Общая стоимость:</span>
                         {electroQuantity && electroType
-                            ? <p>— электронный формат: {totalElectroSum}₽</p>
+                            ? <p>— электронный: {electroQuantity}шт. - {totalElectroSum}₽</p>
                             : null
                         }
                         {physicalQuantity && physicalType
-                            ? <p>— бумажный формат: {totalPhysicalSum}₽ (<strong>с доставкой</strong>)</p>
+                            ? <p>— бумажный формат: {physicalQuantity}шт. - {totalPhysicalSum}₽ <strong className='pl-[15px]'>(с доставкой)</strong></p>
                             : null
                         }
                         {
