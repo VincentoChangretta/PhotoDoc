@@ -23,7 +23,7 @@ export const MainServices = () => {
                             ))}
                         </div>
                     </div>
-                    <PictureRetoucher img1={retouch1} img2={retouch2} />
+                    <PictureRetoucher className="max-w-[400px]" img1={retouch1} img2={retouch2} />
                 </div>
             </div>
         </section>

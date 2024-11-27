@@ -13,6 +13,7 @@ import { currentBasketReducer } from "./currentBasketReducer";
 import { currentDeliveryDateReducer } from "./currentDeliveryDate";
 import { currentDeliveryAddressReducer } from "./currentDeliveryAddressReducer";
 import { currentCliendPhotoCodeReducer } from "./currentCliendPhotoCodeReducer";
+import { currentInModalFormReducer } from "./currentInModalFormReducer";
 
 const rootReduser = combineReducers({
   currentSize: currentSizeReducer,
@@ -27,6 +28,7 @@ const rootReduser = combineReducers({
   currentDeliveryDate: currentDeliveryDateReducer,
   currentDeliveryAddress: currentDeliveryAddressReducer,
   currentClientPhotoCode: currentCliendPhotoCodeReducer,
+  currentModalFormState: currentInModalFormReducer, 
 });
 
 export const store = createStore(

@@ -78,7 +78,7 @@ export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
                     <span className='customSize-size'>3.9</span>
                     , в поле высоты - <span className='customSize-size'>4.5</span> <br />
                 </p>
-                <p className={`${sizeError ? 'bg-errorColor' : 'bg-textColorHover'} transition-all max-w-fit p-[5px] px-[15px] mb-[15px] rounded-elementRounded`}>
+                <p className={`${sizeError ? 'bg-errorColorNoOpacity' : 'bg-textColorHover'} transition-all max-w-fit p-[5px] px-[15px] mb-[15px] rounded-elementRounded`}>
                     {attentionText}
                 </p>
                 <div className='flex items-center gap-[30px] mb-[15px] bg-textColorHover rounded-elementRounded p-[20px] pb-[35px]'>

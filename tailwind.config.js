@@ -18,7 +18,8 @@ export default {
         shadowColor: "rgba(0,0,0,.3)",
         placeholder: "rgba(255,255,255,.6)",
         glassBorderColor: "rgba(255,255,255,.5)",
-        errorColor: "rgb(255,58,44)",
+        errorColor: "rgba(235, 76, 66, .4)",
+        errorColorNoOpacity: "rgba(235, 76, 66, 1)",
         selectionBg: "#3D1C1E",
       },
       borderRadius: {

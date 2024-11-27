@@ -4,7 +4,7 @@
 }
 
 .check-style {
-    @apply absolute z-10 top-[9px] left-[0px] w-[16px] h-[16px] rounded-[5px] border-2 border-textColor cursor-pointer
+    @apply absolute z-10 top-[10px] left-[15px] w-[16px] h-[16px] rounded-[5px] border-2 border-textColor cursor-pointer
 }
 
 .check-style.active::before {

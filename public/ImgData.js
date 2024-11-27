@@ -14,6 +14,8 @@ import FirstStep from "../src/Images/firstStep.jpg";
 import SecondStep from "../src/Images/secondStep.jpg";
 import ThirdStep from "../src/Images/thirdStep.jpg";
 import FourthStep from "../src/Images/fourthStep.jpg";
+import Restoration1 from "../src/Images/Restoration1.jpg";
+import Restoration2 from "../src/Images/Restoration2.jpg";
 
 export {
   docImg,
@@ -31,5 +33,7 @@ export {
   FirstStep,
   SecondStep,
   ThirdStep,
-  FourthStep
+  FourthStep,
+  Restoration1,
+  Restoration2,
 };

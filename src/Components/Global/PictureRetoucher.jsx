@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './PictureRetoucher.css';
 
-export const PictureRetoucher = ({ img1, img2 }) => {
+export const PictureRetoucher = ({ className, img1, img2  }) => {
     const [linePosition, setLinePosition] = useState(50); // начальная позиция линии
     const [isDragging, setIsDragging] = useState(false); // состояние удерживания мыши
     const containerRef = useRef(null); // используем ref для контейнера
@@ -45,7 +45,7 @@ export const PictureRetoucher = ({ img1, img2 }) => {
 
     return (
         <div
-            className="picture-retoucher"
+            className={`${className} picture-retoucher`}
             ref={containerRef}
             onMouseDown={handleMouseDown}
         >

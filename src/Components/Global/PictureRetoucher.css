@@ -1,5 +1,5 @@
 .picture-retoucher {
-    @apply relative max-w-[400px] cursor-pointer rounded-elementRounded overflow-hidden shadow-xl;
+    @apply relative cursor-pointer rounded-elementRounded overflow-hidden shadow-xl;
 }
 
 .picture-retoucher .img {

@@ -8,7 +8,7 @@ import {
   SecondStep,
   ThirdStep,
 } from "./ImgData";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const SIZE_2x3 = "2x3";
 export const SIZE_25x35 = "2.5x3.5";
@@ -46,12 +46,13 @@ export const CLOTH_INPUT_LOCALSTORE = "cloth_input_store";
 
 export const RUBLE = "₽";
 
-export const RETOUCH_PRICE_ONLINE = 300;
+export const RETOUCH_PRICE = 500;
 export const RETOUCH_PRICE_DELIVERY = 300;
 export const RETOUCH_PHYSICAL_QUANTITY = 1;
 export const RETOUCH_PRICE_ADDITIONAL = 50;
 
-export const RESTORATION_PRICE_ONLINE = 300;
+export const RESTORATION_PRICE = 500;
+export const HARD_RESTORATION_PRICE = 2000
 export const RESTORATION_PRICE_DELIVERY = 300;
 export const RESTORATION_PHYSICAL_QUANTITY = 1;
 export const RESTORATION_PRICE_ADDITIONAL = 50;
@@ -163,13 +164,13 @@ export const mainTopImgArr = [
     id: "обработка фотографий",
     img: retImg,
     text: "Ретушь",
-    price: RETOUCH_PRICE_ONLINE,
+    price: RETOUCH_PRICE,
   },
   {
     id: "реставрация фотографий",
     img: restImg,
     text: "Реставрация",
-    price: RESTORATION_PRICE_ONLINE,
+    price: RESTORATION_PRICE,
   },
 ];
 
@@ -402,5 +403,20 @@ export const faqData = [
     question: "Предоставляете ли вы гарантию на фото?",
     answer:
       "Да, мы гарантируем, что ваши фотографии будут соответствовать требованиям выбранного документа. Если что-то не так, мы бесплатно исправим.",
+  },
+];
+
+export const restorationPriceData = [
+  {
+    id: "restoration-1",
+    title: "Базовая реставрация фотографий",
+    text: "Помогает при небольших повреждениях (10-40%). Включает удаление мелких пятен и царапин, цветокоррекцию и тонирование, дорисовку небольших участков.",
+    price: RESTORATION_PRICE,
+  },
+  {
+    id: "restoration-2",
+    title: "Сложная реставрация с отрисовкой",
+    text: "Помогает при сильных повреждениях (от 40%). Включает дорисовку крупных объектов и углов; удаление больших трещин; коррекцию светотени и резкости; устранение мутности, зернистости, муара и тиснения с полным восстановлением фото",
+    price: HARD_RESTORATION_PRICE,
   },
 ];
