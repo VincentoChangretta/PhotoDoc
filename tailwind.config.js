@@ -16,7 +16,7 @@ export default {
         invertedTextColorHover: "#E1E1E1",
         iconActive: "#ffffff !Important",
         shadowColor: "rgba(0,0,0,.3)",
-        placeholder: "rgba(255,255,255,.6)",
+        placeholder: "#ccc",
         glassBorderColor: "rgba(255,255,255,.5)",
         errorColor: "rgba(235, 76, 66, .4)",
         errorColorNoOpacity: "rgba(235, 76, 66, 1)",

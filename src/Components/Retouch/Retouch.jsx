@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
-import { RestorationTop } from './RestorationTop/RestorationTop';
-import { ModalForm } from '../Global/ModalForm';
+import React from 'react';
+import { RetouchTop } from './RetouchTop/RetouchTop';
 import { useSelector } from 'react-redux';
+import { ModalForm } from '../Global/ModalForm';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
 
-export const Restoration = () => {
+export const Retouch = () => {
     useScrollToTop()
     const {
         state: ModalFormState,
         service: ModalFormData
     } = useSelector(state => state.currentModalFormState)
 
-
-
     return (
         <>
-            <RestorationTop />
+            <RetouchTop />
             {ModalFormState && ModalFormData && <ModalForm data={ModalFormData} />}
         </>
     );

@@ -13,8 +13,10 @@ import { currentPhotoColoredAction } from '../../Redux/currentPhotoColors';
 import { currentPhotoWithoutClothAction } from '../../Redux/currentPhotoClothReducer';
 import { changeOptionClothAction, changeOptionColorAction } from '../../Redux/currentPhotoDocOptionReducer';
 import { setCurrentBasketPhotodocInfo } from '../../Redux/currentBasketReducer';
+import { useScrollToTop } from '../../Hooks/useScrollToTop';
 
 export const Constructor = () => {
+    useScrollToTop()
     const currentSize = useSelector(state => state.currentSize.currentSize)
     const dispatch = useDispatch()
     const {

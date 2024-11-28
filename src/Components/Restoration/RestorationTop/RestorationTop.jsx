@@ -1,7 +1,7 @@
 import React from 'react';
 import { PictureRetoucher } from '../../Global/PictureRetoucher';
 import { Restoration1, Restoration2 } from '../../../../public/ImgData';
-import { restorationPriceData } from '../../../../public/AppData';
+import { links, restorationPriceData } from '../../../../public/AppData';
 import { ServicePriceCard } from '../../Global/ServicePriceCard';
 
 export const RestorationTop = () => {
@@ -31,7 +31,7 @@ export const RestorationTop = () => {
                         <p className='mb-[30px] text-xl'>
                             Назвать точную стоимость работы мы сможем только после того, как увидим снимки и ознакомимся с Вашими пожеланиями. Отправьте изображение мастеру на оценку прямо сейчас – это бесплатно и ни к чему Вас не обязывает.
                         </p>
-                        <button className='btn'>Узнать стоимость</button>
+                        <a target='blank' href={links.telegram} className='btn'>Узнать стоимость</a>
                     </div>
                     <div className='flex gap-[30px]'>
                         {restorationPriceData.map(item => (

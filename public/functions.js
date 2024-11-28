@@ -3,6 +3,8 @@ const mailto = "./../mail.php";
 export const fetchToMail = async (e, form) => {
   e.preventDefault();
   const formData = new FormData(form);
+  console.log([...formData]);
+  
   try {
     const response = await fetch(mailto, {
       method: "POST",

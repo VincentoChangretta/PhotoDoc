@@ -16,6 +16,8 @@ import ThirdStep from "../src/Images/thirdStep.jpg";
 import FourthStep from "../src/Images/fourthStep.jpg";
 import Restoration1 from "../src/Images/Restoration1.jpg";
 import Restoration2 from "../src/Images/Restoration2.jpg";
+import Retouch1 from "../src/Images/retouchAnim.jpg";
+import Retouch2 from "../src/Images/retouchAnim1.jpg";
 
 export {
   docImg,
@@ -36,4 +38,6 @@ export {
   FourthStep,
   Restoration1,
   Restoration2,
+  Retouch1,
+  Retouch2,
 };

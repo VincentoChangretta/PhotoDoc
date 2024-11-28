@@ -8,6 +8,10 @@ import { PromoCode } from './Global/PromoCode';
 import { Order } from './Order/Order';
 import { Recommendations } from './Recommendations/Recommendations';
 import { Restoration } from './Restoration/Restoration';
+import { Retouch } from './Retouch/Retouch';
+import { AboutUs } from './AboutUs/AboutUs';
+import { Delivery } from './Delivery/Delivery';
+import { PrivacyPolicy } from './PrivacyPolicy/PrivacyPolicy';
 
 export const promoCodeModalContext = createContext("no provider")
 
@@ -21,9 +25,12 @@ export const Navigation = () => {
                     <Route path={PATHNAMES.photoDocument} element={<PhotoDocument />} />
                     <Route path={PATHNAMES.recommendations} element={<Recommendations />} />
                     <Route path={PATHNAMES.restoration} element={<Restoration />} />
-                    <Route path={PATHNAMES.retouch} element={<Recommendations />} />
+                    <Route path={PATHNAMES.retouch} element={<Retouch />} />
                     <Route path={PATHNAMES.constructor} element={<Constructor />} />
                     <Route path={PATHNAMES.order} element={<Order />} />
+                    <Route path={PATHNAMES.aboutUs} element={<AboutUs />} />
+                    <Route path={PATHNAMES.delivery} element={<Delivery />} />
+                    <Route path={PATHNAMES.privacyPolicy} element={<PrivacyPolicy />} />
                 </Routes>
                 {promoCodeModal && <PromoCode />}
             </promoCodeModalContext.Provider>

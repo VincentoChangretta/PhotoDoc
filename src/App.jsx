@@ -1,14 +1,11 @@
-import { createContext, useState } from 'react'
 import './App.css'
 import { Footer } from './Components/Global/Footer'
 import { Header } from './Components/Global/Header'
 import { Navigation } from './Components/Navigation'
 
-export const footerContext = createContext("no context")
-
 function App() {
-
-
+  console.log('render app')
+  
   return (
     <>
       <div className="wrapper">

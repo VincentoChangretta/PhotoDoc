@@ -4,11 +4,11 @@ import { PhotoDocumentCard } from './PhotoDocumentCard';
 import { MainInfoPhoto } from '../Main/MainInfo/MainInfoPhoto';
 import { CreateCustomSize } from './CreateCustomSize';
 import { useState } from 'react';
+import { useScrollToTop } from '../../Hooks/useScrollToTop';
 
 export const PhotoDocument = () => {
-
   const [createCustomSizeModal, setCreateCustomSizeModal] = useState(null)
-
+  useScrollToTop()
   return (
     <>
       <section className='photodocument mb-0'>

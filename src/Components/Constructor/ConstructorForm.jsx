@@ -10,6 +10,7 @@ import { PhotoDocDelivery } from './PhotoDocDelivery';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentClientPhotoCodeCreator } from '../../Redux/currentCliendPhotoCodeReducer';
 import { TextArea } from '../UI/TextArea';
+import { PHOTO_COLOR_COLORED, PHOTO_COLOR_COLORLESS, RUBLE } from '../../../public/AppData';
 
 export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoModal }) => {
 
@@ -21,8 +22,25 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
     const [privacyError, setPrivacyError] = useState("")
     const [infoError, setInfoError] = useState("")
     const [fetchedDescr, setFetchedDescr] = useState(null)
+    const {
+        currentDeliveryDate,
+        currentDeliveryTime,
+    } = useSelector(state => state.currentDeliveryDate);
     const formRef = useRef(null)
     const dispatch = useDispatch()
+
+    const cloth = currentPhotoStore.cloth.state ? currentPhotoStore.cloth.form : false
+    const color = currentPhotoStore.color ? PHOTO_COLOR_COLORED : PHOTO_COLOR_COLORLESS
+    const photoSize = currentPhotoStore.photoInfo.info.name
+    const price = currentPhotoStore.photoInfo.price + RUBLE
+    const electroPhoto = currentPhotoStore.type.electroType ? currentPhotoStore.quantity.electroQuantity : 0
+    const physicalPhoto = currentPhotoStore.type.physicalType ? currentPhotoStore.quantity.physicalQuantity : 0
+
+
+
+
+
+
 
     useEffect(() => {
         if (currentPhotoStore.photoInfo.info.id !== prevPhoto?.id) {
@@ -76,7 +94,18 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                     </div>
                     <div className={classes['form_block']}>
                         {currentPhotoStore.type.physicalType && <PhotoDocDelivery />}
-                        <TextArea placeholder="Сообщение (необязательно)" />
+                        <TextArea name="message" placeholder="Сообщение (необязательно)" />
+                    </div>
+                    <div className='hidden'>
+                        <input name="photo-size" type="text" value={photoSize} />
+                        <input name="photo-electro" type="text" value={electroPhoto} />
+                        <input name="photo-physical" type="text" value={physicalPhoto} />
+                        <input name="photo-cloth" type="text" value={cloth} />
+                        <input name="photo-color" type="text" value={color} />
+                        <input name="photo-price" type="text" value={price} />
+                        <input name='photo-deliveryDate' type="text" value={currentDeliveryDate} />
+                        <input name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
+                        <input name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
                     </div>
                     <div className='flex flex-col justify-between'>
                         <div className='flex flex-col gap-[15px] p-[30px] bg-grayHover rounded-elementRounded'>

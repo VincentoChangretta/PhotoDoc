@@ -15,7 +15,8 @@ export const useInput = () => {
 
   const reset = () => {
     setValue("");
+    setIsActive(false);
   };
   
-  return { value, onChange: handleChange, isActive };
+  return { value, onChange: handleChange, isActive, reset };
 };

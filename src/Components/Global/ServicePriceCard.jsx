@@ -23,7 +23,7 @@ export const ServicePriceCard = ({ data }) => {
                 <p className='mb-[30px]'>{data.text}</p>
             </div>
             <button
-                className='btn mt-auto'
+                className='btn mt-auto mx-auto'
                 onClick={handleOpenModal}
             >
                 Заказать

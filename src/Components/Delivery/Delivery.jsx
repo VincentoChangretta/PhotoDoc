@@ -1,12 +1,12 @@
 import React from 'react';
-import { RecommendationsTop } from './RecommendationsTop';
+import { DeliveryTop } from './DeliveryTop/DeliveryTop';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
 
-export const Recommendations = () => {
+export const Delivery = () => {
     useScrollToTop()
     return (
         <>
-            <RecommendationsTop />
+            <DeliveryTop />
         </>
     );
 }

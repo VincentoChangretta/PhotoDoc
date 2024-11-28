@@ -10,6 +10,12 @@ import {
 } from "./ImgData";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+export const links = {
+  telegram: "https://www.google.com",
+};
+
+export const PHOTODOC = "Фото на документ"
+
 export const SIZE_2x3 = "2x3";
 export const SIZE_25x35 = "2.5x3.5";
 export const SIZE_3x4 = "3x4";
@@ -47,12 +53,16 @@ export const CLOTH_INPUT_LOCALSTORE = "cloth_input_store";
 export const RUBLE = "₽";
 
 export const RETOUCH_PRICE = 500;
+export const RETOUCH_COMPLEX_PRICE = 300;
+export const RETOUCH_COMPLEX_GROUP_PRICE = 500;
+export const RETOUCH_BEAUTY_PRICE = 700;
+
 export const RETOUCH_PRICE_DELIVERY = 300;
 export const RETOUCH_PHYSICAL_QUANTITY = 1;
 export const RETOUCH_PRICE_ADDITIONAL = 50;
 
 export const RESTORATION_PRICE = 500;
-export const HARD_RESTORATION_PRICE = 2000
+export const HARD_RESTORATION_PRICE = 2000;
 export const RESTORATION_PRICE_DELIVERY = 300;
 export const RESTORATION_PHYSICAL_QUANTITY = 1;
 export const RESTORATION_PRICE_ADDITIONAL = 50;
@@ -90,12 +100,14 @@ export const ATTENTION_DATA = {
 export const PATHNAMES = {
   home: "/",
   photoDocument: "/photodocument",
-  recommendations: "recommendations",
+  recommendations: "/recommendations",
   restoration: "/restoration",
   retouch: "/retouch",
   aboutUs: "/aboutus",
   constructor: "/constructor",
   order: "/order",
+  delivery: "/delivery",
+  privacyPolicy: "/privacypolicy",
 };
 
 export const TYPES = {
@@ -126,25 +138,14 @@ export const navArr = [
     pathname: PATHNAMES.photoDocument,
   },
   {
-    id: "recommendations",
-    item: "Рекомендации",
-    pathname: PATHNAMES.recommendations,
+    id: "restoration",
+    item: "Реставрация",
+    pathname: PATHNAMES.restoration,
   },
   {
-    id: "allservices",
-    item: "Все услуги",
-    services: [
-      {
-        id: "restoration",
-        item: "Реставрация",
-        pathname: PATHNAMES.restoration,
-      },
-      {
-        id: "retouch",
-        item: "Ретушь",
-        pathname: PATHNAMES.retouch,
-      },
-    ],
+    id: "retouch",
+    item: "Ретушь",
+    pathname: PATHNAMES.retouch,
   },
   {
     id: "aboutus",
@@ -177,57 +178,75 @@ export const mainTopImgArr = [
 export const photoDocumentArr = [
   {
     id: SIZE_25x35,
+    type: PHOTODOC,                
     name: `Фото ${SIZE_25x35}`,
     descr: "Для школьных документов и удостоверений",
     priceOnline: PHOTODOC_PRICE_ONLINE,
     priceOrder: PHOTODOC_PRICE_ONLINE + PHOTODOC_PRICE_DELIVERY,
     physicalQuantity: PHOTODOC_PHYSICAL_QUANTITY,
     AdditionalPrice: PHOTODOC_PRICE_ADDITIONAL,
+    tag: "фото, фотография, фотографии, документы, фото на, справка, фото на справку, фото на удостоверение, удостоверение",
+    pathname: PATHNAMES.constructor,
   },
   {
-    id: SIZE_3x4,
+    id: SIZE_3x4, 
+    type: PHOTODOC,            
     name: `Фото ${SIZE_3x4}`,
     descr: "Стандартный размер для большинства документов",
     priceOnline: PHOTODOC_PRICE_ONLINE,
     priceOrder: PHOTODOC_PRICE_ONLINE + PHOTODOC_PRICE_DELIVERY,
     physicalQuantity: PHOTODOC_PHYSICAL_QUANTITY,
     AdditionalPrice: PHOTODOC_PRICE_ADDITIONAL,
+    tag: "фото, фотография, фотографии, документы, справка, фото на справку, фото на, фото на удостоверение, удостоверение",
+    pathname: PATHNAMES.constructor,
   },
   {
     id: SIZE_35x45,
+    type: PHOTODOC,     
     name: `Фото ${SIZE_35x45}`,
     descr: "Подойдет на паспорт, загранпаспорт, визы",
     priceOnline: PHOTODOC_PRICE_ONLINE,
     priceOrder: PHOTODOC_PRICE_ONLINE + PHOTODOC_PRICE_DELIVERY,
     physicalQuantity: PHOTODOC_PHYSICAL_QUANTITY,
     AdditionalPrice: PHOTODOC_PRICE_ADDITIONAL,
+    tag: "фото, фотография, фотографии, документы, справка, фото на справку, фото на, паспорт, фото на паспорт, фото на загранпаспорт, фото на визу, шенген, виза, загранпаспорт, фото на удостоверение, удостоверение",
+    pathname: PATHNAMES.constructor,
   },
   {
     id: SIZE_4x6,
+    type: PHOTODOC,
     name: `Фото ${SIZE_4x6}`,
     descr: "На различные удостоверения, военные документы",
     priceOnline: PHOTODOC_PRICE_ONLINE,
     priceOrder: PHOTODOC_PRICE_ONLINE + PHOTODOC_PRICE_DELIVERY,
     physicalQuantity: PHOTODOC_PHYSICAL_QUANTITY,
     AdditionalPrice: PHOTODOC_PRICE_ADDITIONAL,
+    tag: "фото, фотография, фотографии, документы, справка, фото на справку, фото на, удостоверение, фото на удостоверение",
+    pathname: PATHNAMES.constructor,
   },
   {
     id: SIZE_45x60,
+    type: PHOTODOC,
     name: `Фото ${SIZE_45x60}`,
     descr: "Подходит для различных удостоверений и карт",
     priceOnline: PHOTODOC_PRICE_ONLINE,
     priceOrder: PHOTODOC_PRICE_ONLINE + PHOTODOC_PRICE_DELIVERY,
     physicalQuantity: PHOTODOC_PHYSICAL_QUANTITY,
     AdditionalPrice: PHOTODOC_PRICE_ADDITIONAL,
+    tag: "фото, фотография, фотографии, документы, справка, фото на справку, фото на, удостоверение, фото на удостоверение",
+    pathname: PATHNAMES.constructor,
   },
   {
     id: SIZE_9x12,
+    type: PHOTODOC,
     name: `Фото ${SIZE_9x12}`,
     descr: "Для официальных документов и портретов",
     priceOnline: PHOTODOC_PRICE_ONLINE,
     priceOrder: PHOTODOC_PRICE_ONLINE + PHOTODOC_PRICE_DELIVERY,
     physicalQuantity: 1,
     AdditionalPrice: PHOTODOC_PRICE_ADDITIONAL,
+    tag: "фото, фотография, фотографии, документы, справка, фото на справку, фото на, удостоверение, фото на удостоверение",
+    pathname: PATHNAMES.constructor,
   },
 ];
 
@@ -330,13 +349,13 @@ export const photoDocSteps = [
     img: SecondStep,
   },
   {
-    id: "second-step",
+    id: "third-step",
     title: "Загрузите фото на сайт и заполните форму",
     text: "Заполните форму, чтобы мы смогли связаться с вами",
     img: ThirdStep,
   },
   {
-    id: "third-step",
+    id: "fourth-step",
     title: "Получите фотографии",
     text: "Электронные - на указанную почту или мессенджеры, бумажные - по доставке",
     img: FourthStep,
@@ -412,11 +431,48 @@ export const restorationPriceData = [
     title: "Базовая реставрация фотографий",
     text: "Помогает при небольших повреждениях (10-40%). Включает удаление мелких пятен и царапин, цветокоррекцию и тонирование, дорисовку небольших участков.",
     price: RESTORATION_PRICE,
+    tags: ["реставрация, фото, старые фото"],
+    pathname: PATHNAMES.restoration
   },
   {
     id: "restoration-2",
-    title: "Сложная реставрация с отрисовкой",
+    title: "Сложная реставрация фотографий",
     text: "Помогает при сильных повреждениях (от 40%). Включает дорисовку крупных объектов и углов; удаление больших трещин; коррекцию светотени и резкости; устранение мутности, зернистости, муара и тиснения с полным восстановлением фото",
     price: HARD_RESTORATION_PRICE,
+    tags: ["реставрация, фото, старые фото"],
+    pathname: PATHNAMES.restoration
   },
 ];
+
+export const retouchPriceData = [
+  {
+    id: "retouch-1",
+    title: "Комплексная ретушь одного человека",
+    text: "Может включать в себя что-то из следующих пожеланий - ретушь кожи; пластику фигуры; коррекцию прически, одежды или макияжа.",
+    price: RETOUCH_COMPLEX_PRICE,
+    tags: ["ретушь, обработка, фото, фотографии"],
+    pathname: PATHNAMES.retouch
+  },
+  {
+    id: "retouch-2",
+    title: "Комплексная ретушь группового портрета",
+    text: "Может включать в себя что-то из следующих пожеланий - ретушь кожи; пластику фигуры; коррекцию прически, одежды или макияжа.",
+    price: RETOUCH_COMPLEX_GROUP_PRICE,
+    tags: ["ретушь, обработка, фото, фотографии"],
+    pathname: PATHNAMES.retouch
+  },
+  {
+    id: "retouch-3",
+    title: "Beauty ретушь",
+    text: "Глубокая журнальная или глянцевая обработка всего фото. Ретушь для портфолио и модельных тестов. Используется техника частотного разложения, а также dodge&burn.",
+    price: RETOUCH_BEAUTY_PRICE,
+    tags: ["ретушь, обработка, фото, фотографии"],
+    pathname: PATHNAMES.retouch
+  },
+];
+
+export const allServiceData = {
+  photoDoc: photoDocumentArr,
+  restoration: restorationPriceData,
+  retouch: retouchPriceData,
+};

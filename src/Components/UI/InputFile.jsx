@@ -37,6 +37,7 @@ export const InputFile = ({ fileInput, setFileInput }) => {
                     onChange={handleFileChange}
                     required
                     aria-label="Загрузите фото"
+                    accept=".jpg,.jpeg,.png,.heic,.webp"
                 />
             </label>
         </div>

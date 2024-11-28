@@ -39,10 +39,10 @@ export const ModalForm = ({ data }) => {
                     )
                 }
                 onClick={e => e.stopPropagation()}
-                className='max-w-[600px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded'
+                className='max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded'
             >
                 <div className='mb-[20px]'>
-                    <h2 className='text-3xl font-extrabold mb-[20px]'>{data.title}</h2>
+                    <h2 className='text-4xl font-extrabold mb-[20px]'>{data.title}</h2>
                     <p className='text-2xl font-extrabold'>от {data.price + RUBLE}</p>
                 </div>
                 <div className='flex flex-col gap-[10px]'>
@@ -66,7 +66,7 @@ export const ModalForm = ({ data }) => {
                         required={true}
                     />
                     <InputFile fileInput={fileInput} setFileInput={setFileInput} />
-                    <div className='raletive p-[20px] bg-invertedTextColor text-textColor rounded-elementRounded'>
+                    <div className='max-w-[450px] raletive p-[20px] bg-invertedTextColor text-textColor rounded-elementRounded'>
                         <CheckboxVerification
                             errorStatus={privacyError}
                             stateChanger={setPrivacyCheckbox}
