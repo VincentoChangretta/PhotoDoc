@@ -6,6 +6,7 @@ import { Input } from '../UI/Input';
 import { InputFile } from '../UI/InputFile';
 import { CheckboxVerification } from './Checkbox';
 import { handleSubmit } from '../../../public/functions';
+import { ModalCloser } from './ModalCloser';
 
 export const ModalForm = ({ data }) => {
     const formRef = useRef(null)
@@ -39,8 +40,9 @@ export const ModalForm = ({ data }) => {
                     )
                 }
                 onClick={e => e.stopPropagation()}
-                className='max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded'
+                className='relative max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded'
             >
+                <ModalCloser closeModal={() => dispatch(closeFormModalCreator())}/>
                 <div className='mb-[20px]'>
                     <h2 className='text-4xl font-extrabold mb-[20px]'>{data.title}</h2>
                     <p className='text-2xl font-extrabold'>от {data.price + RUBLE}</p>
@@ -66,6 +68,9 @@ export const ModalForm = ({ data }) => {
                         required={true}
                     />
                     <InputFile fileInput={fileInput} setFileInput={setFileInput} />
+                    <div className='hidden'>
+                        <input readOnly name="price" type="text" value={`от ${data.price + RUBLE}`} />
+                    </div>
                     <div className='max-w-[450px] raletive p-[20px] bg-invertedTextColor text-textColor rounded-elementRounded'>
                         <CheckboxVerification
                             errorStatus={privacyError}

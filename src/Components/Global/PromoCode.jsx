@@ -59,7 +59,7 @@ export const PromoCode = () => {
             >
                 <ModalCloser closeModal={setPromoCodeModal} />
                 <h3 className='max-w-[450px] mb-[30px] text-3xl text-center font-extrabold text-invertedTextColor '>
-                    Активируйте промокод и получайте приятные скидки!
+                    Активируйте промокод и получайте выгодные скидки!
                 </h3>
                 <Input
                     placeholder="Введите промокод"

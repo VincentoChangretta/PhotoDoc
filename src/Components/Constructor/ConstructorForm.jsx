@@ -97,15 +97,15 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                         <TextArea name="message" placeholder="Сообщение (необязательно)" />
                     </div>
                     <div className='hidden'>
-                        <input name="photo-size" type="text" value={photoSize} />
-                        <input name="photo-electro" type="text" value={electroPhoto} />
-                        <input name="photo-physical" type="text" value={physicalPhoto} />
-                        <input name="photo-cloth" type="text" value={cloth} />
-                        <input name="photo-color" type="text" value={color} />
-                        <input name="photo-price" type="text" value={price} />
-                        <input name='photo-deliveryDate' type="text" value={currentDeliveryDate} />
-                        <input name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
-                        <input name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
+                        <input readOnly name="photo-size" type="text" value={photoSize} />
+                        <input readOnly name="photo-electro" type="text" value={electroPhoto} />
+                        <input readOnly name="photo-physical" type="text" value={physicalPhoto} />
+                        <input readOnly name="photo-cloth" type="text" value={cloth} />
+                        <input readOnly name="photo-color" type="text" value={color} />
+                        <input readOnly name="photo-price" type="text" value={price} />
+                        <input readOnly name='photo-deliveryDate' type="text" value={currentDeliveryDate} />
+                        <input readOnly name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
+                        <input readOnly name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
                     </div>
                     <div className='flex flex-col justify-between'>
                         <div className='flex flex-col gap-[15px] p-[30px] bg-grayHover rounded-elementRounded'>
