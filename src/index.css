@@ -14,9 +14,10 @@
 }
 
 body {
-  @apply text-textColor bg-slate-100;
   font: 18px "Manrope", "Montserrat", serif;
-  background-image: linear-gradient(55deg,
+  @apply text-textColor bg-slate-100 w-420:text-sm;
+  background-image: linear-gradient(
+      55deg,
       rgba(208, 208, 208, 0.03) 0%,
       rgba(208, 208, 208, 0.03) 20%,
       rgba(55, 55, 55, 0.03) 20%,
@@ -26,8 +27,10 @@ body {
       rgba(208, 208, 208, 0.03) 60%,
       rgba(208, 208, 208, 0.03) 80%,
       rgba(191, 191, 191, 0.03) 80%,
-      rgba(191, 191, 191, 0.03) 100%),
-    linear-gradient(291deg,
+      rgba(191, 191, 191, 0.03) 100%
+    ),
+    linear-gradient(
+      291deg,
       rgba(190, 190, 190, 0.02) 0%,
       rgba(190, 190, 190, 0.02) 14.286%,
       rgba(105, 105, 105, 0.02) 14.286%,
@@ -41,8 +44,10 @@ body {
       rgba(129, 129, 129, 0.02) 71.43%,
       rgba(129, 129, 129, 0.02) 85.71600000000001%,
       rgba(75, 75, 75, 0.02) 85.716%,
-      rgba(75, 75, 75, 0.02) 100.002%),
-    linear-gradient(32deg,
+      rgba(75, 75, 75, 0.02) 100.002%
+    ),
+    linear-gradient(
+      32deg,
       rgba(212, 212, 212, 0.03) 0%,
       rgba(212, 212, 212, 0.03) 12.5%,
       rgba(223, 223, 223, 0.03) 12.5%,
@@ -58,8 +63,10 @@ body {
       rgba(91, 91, 91, 0.03) 75%,
       rgba(91, 91, 91, 0.03) 87.5%,
       rgba(216, 216, 216, 0.03) 87.5%,
-      rgba(216, 216, 216, 0.03) 100%),
-    linear-gradient(312deg,
+      rgba(216, 216, 216, 0.03) 100%
+    ),
+    linear-gradient(
+      312deg,
       rgba(113, 113, 113, 0.01) 0%,
       rgba(113, 113, 113, 0.01) 14.286%,
       rgba(54, 54, 54, 0.01) 14.286%,
@@ -73,8 +80,10 @@ body {
       rgba(239, 239, 239, 0.01) 71.43%,
       rgba(239, 239, 239, 0.01) 85.71600000000001%,
       rgba(54, 54, 54, 0.01) 85.716%,
-      rgba(54, 54, 54, 0.01) 100.002%),
-    linear-gradient(22deg,
+      rgba(54, 54, 54, 0.01) 100.002%
+    ),
+    linear-gradient(
+      22deg,
       rgba(77, 77, 77, 0.03) 0%,
       rgba(77, 77, 77, 0.03) 20%,
       rgba(235, 235, 235, 0.03) 20%,
@@ -84,8 +93,10 @@ body {
       rgba(181, 181, 181, 0.03) 60%,
       rgba(181, 181, 181, 0.03) 80%,
       rgba(193, 193, 193, 0.03) 80%,
-      rgba(193, 193, 193, 0.03) 100%),
-    linear-gradient(80deg,
+      rgba(193, 193, 193, 0.03) 100%
+    ),
+    linear-gradient(
+      80deg,
       rgba(139, 139, 139, 0.02) 0%,
       rgba(139, 139, 139, 0.02) 14.286%,
       rgba(114, 114, 114, 0.02) 14.286%,
@@ -99,8 +110,10 @@ body {
       rgba(201, 201, 201, 0.02) 71.43%,
       rgba(201, 201, 201, 0.02) 85.71600000000001%,
       rgba(187, 187, 187, 0.02) 85.716%,
-      rgba(187, 187, 187, 0.02) 100.002%),
-    linear-gradient(257deg,
+      rgba(187, 187, 187, 0.02) 100.002%
+    ),
+    linear-gradient(
+      257deg,
       rgba(72, 72, 72, 0.03) 0%,
       rgba(72, 72, 72, 0.03) 16.667%,
       rgba(138, 138, 138, 0.03) 16.667%,
@@ -112,8 +125,10 @@ body {
       rgba(17, 17, 17, 0.03) 66.668%,
       rgba(17, 17, 17, 0.03) 83.33500000000001%,
       rgba(230, 230, 230, 0.03) 83.335%,
-      rgba(230, 230, 230, 0.03) 100.002%),
-    linear-gradient(47deg,
+      rgba(230, 230, 230, 0.03) 100.002%
+    ),
+    linear-gradient(
+      47deg,
       rgba(191, 191, 191, 0.01) 0%,
       rgba(191, 191, 191, 0.01) 16.667%,
       rgba(27, 27, 27, 0.01) 16.667%,
@@ -125,12 +140,13 @@ body {
       rgba(230, 230, 230, 0.01) 66.668%,
       rgba(230, 230, 230, 0.01) 83.33500000000001%,
       rgba(93, 93, 93, 0.01) 83.335%,
-      rgba(93, 93, 93, 0.01) 100.002%),
+      rgba(93, 93, 93, 0.01) 100.002%
+    ),
     linear-gradient(90deg, #ffffff, #ffffff);
 }
 
 .wrapper {
-  @apply flex flex-col min-h-[100vh];
+  @apply flex flex-col min-h-[100svh];
 }
 
 .main {
@@ -203,27 +219,27 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 section {
-  @apply mb-[70px];
+  @apply mb-[70px] w-1050:mb-[40px];
 }
 
 section .title-box {
-  @apply mb-[80px];
+  @apply mb-[80px] w-930:mb-[40px];
 }
 
 section .title-box.withoutMargin {
-  @apply mb-[30px]
+  @apply mb-[30px];
 }
 
 section .title-box h2 {
-  @apply text-5xl font-bold mb-[30px] leading-[60px];
+  @apply text-5xl font-bold mb-[30px] leading-[60px] w-930:text-4xl w-930:mb-[15px] w-420:text-3xl;
 }
 
 section .title-box h3 {
-  @apply text-3xl font-bold leading-none;
+  @apply text-3xl font-bold leading-none w-930:text-2xl w-420:text-xl;
 }
 
 section .section-content h4 {
-  @apply text-4xl font-bold mb-[30px] leading-none;
+  @apply text-4xl font-bold mb-[30px] leading-none w-420:text-3xl;
 }
 
 .link {
@@ -236,5 +252,5 @@ textarea {
 }
 
 .counter-item {
-  @apply flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-textColor text-invertedTextColor text-xl font-extrabold shrink-0
+  @apply flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-textColor text-invertedTextColor text-xl font-extrabold shrink-0;
 }

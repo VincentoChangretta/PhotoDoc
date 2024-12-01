@@ -1,10 +1,45 @@
-.img-four{
-    @apply max-w-[500px] flex flex-wrap gap-[20px] justify-center p-[40px] rounded-elementRounded bg-white shadow-cardShadow relative z-10
+.img-four-photoDoc {
+  @apply max-w-[500px] flex flex-wrap gap-[20px] justify-center p-[40px] rounded-elementRounded bg-white shadow-cardShadow relative z-10 w-1460:max-w-[450px] w-1370:max-w-[400px] w-1290:max-w-[320px] w-560:max-w-[250px] w-560:p-[20px] w-460:max-w-[220px] w-375:max-w-[190px] w-375:gap-[10px];
+}
+.img-big-photoDoc {
+  @apply max-w-[480px] absolute top-[50px] left-[-55%] p-[40px] rounded-elementRounded bg-white shadow-reverseCardShadow rotate-[-8deg] w-1460:max-w-[430px] w-1370:max-w-[380px] w-1290:max-w-[300px] w-560:max-w-[230px] w-560:p-[20px] w-460:max-w-[200px] w-375:max-w-[170px];
+}
+.smallImg-photoDoc {
+  @apply w-1460:max-w-[175px] w-1370:max-w-[150px] w-1290:max-w-[110px] w-560:max-w-[95px] w-460:max-w-[80px] w-375:max-w-[70px];
+}
+.img-four {
+  @apply max-w-[500px] flex flex-wrap gap-[20px] justify-center p-[40px] rounded-elementRounded bg-white shadow-cardShadow relative z-10 w-1500:max-w-[450px] w-1400:max-w-[380px] w-1290:max-w-[300px];
 }
 .img-big {
-    @apply max-w-[480px] absolute top-[50px] right-[-55%] p-[40px] rounded-elementRounded bg-white shadow-cardShadow rotate-[8deg]
+  @apply max-w-[480px] absolute top-[50px] right-[-55%] p-[40px] rounded-elementRounded bg-white shadow-cardShadow rotate-[8deg] w-1500:max-w-[430px] w-1400:max-w-[360px] w-1290:max-w-[280px];
+}
+.smallImg {
+  @apply w-1500:max-w-[175px] w-1400:max-w-[140px] w-1290:max-w-[100px];
+}
+.main-four {
+  animation: animForSmall 5s ease infinite;
+}
+.main-big {
+  animation: animForBig 5s ease infinite;
 }
 
-.img-big-left{
-    @apply max-w-[480px] absolute top-[50px] left-[-55%] p-[40px] rounded-elementRounded bg-white shadow-reverseCardShadow rotate-[-8deg]
+@keyframes animForSmall {
+  50% {
+    rotate: 2deg;
+    translate: 0 -40px;
+  }
+  100% {
+    rotate: 0deg;
+    translate: 0 0;
+  }
+}
+@keyframes animForBig {
+  50% {
+    rotate: 3deg;
+    translate: 10px -60px;
+  }
+  100% {
+    rotate: 0deg;
+    translate: 0 0;
+  }
 }

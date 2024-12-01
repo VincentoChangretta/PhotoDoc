@@ -1,5 +1,5 @@
 .service-card {
-    @apply flex items-center justify-between gap-10 px-[30px] py-[20px] rounded-elementRounded bg-white cursor-pointer transition-transform shadow-xl hover:scale-[1.02]
+    @apply flex items-center justify-between gap-10 px-[30px] py-[20px] rounded-elementRounded bg-white cursor-pointer transition-transform shadow-xl hover:scale-[1.02] w-375:px-[15px] py-[15px]
 }
 
 .service-card:last-of-type {

@@ -11,13 +11,13 @@ export const PhotoDocument = () => {
   useScrollToTop()
   return (
     <>
-      <section className='photodocument mb-0'>
+      <section className='photodocument'>
         <div className="container">
           <div className="title-box text-center">
             <h2>Выберите подходящий размер</h2>
           </div>
-          <div className='flex justify-between items-center'>
-            <div className="flex flex-col gap-[10px]">
+          <div className='flex justify-between items-center w-1160:flex-col w-1160:gap-[60px]'>
+            <div className="flex flex-col gap-[10px] w-1160:items-center">
               {photoDocumentArr.map(photo => (
                 <PhotoDocumentCard key={photo.id} photo={photo} />
               ))}

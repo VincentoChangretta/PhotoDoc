@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { FunctionalBar } from './FunctionalBar';
 import { PhotoArea } from './PhotoArea';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,10 +14,12 @@ import { currentPhotoWithoutClothAction } from '../../Redux/currentPhotoClothRed
 import { changeOptionClothAction, changeOptionColorAction } from '../../Redux/currentPhotoDocOptionReducer';
 import { setCurrentBasketPhotodocInfo } from '../../Redux/currentBasketReducer';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
+import { useWindowSize } from '../../Hooks/useWindowSize';
 
 export const Constructor = () => {
     useScrollToTop()
     const currentSize = useSelector(state => state.currentSize.currentSize)
+    const [photoQuantity, setPhotoQuantity] = useState(0)
     const dispatch = useDispatch()
     const {
         currentElectroQuantity: electroQuantity,
@@ -28,7 +30,6 @@ export const Constructor = () => {
         physicalPhotoType: physicalType
     } = useSelector(state => state.currentPhotoType)
     const previousSize = useSelector(state => state.previousPhotoDoc.previousPhotoSize)
-
     useEffect(() => {
         const resetToDefault = () => {
             dispatch(currentPhotoColoredAction())
@@ -52,6 +53,9 @@ export const Constructor = () => {
 
         return () => dispatch(setPreviousPhotoAction(currentSize))
     }, [currentSize]);
+    const screenWidth = useWindowSize()
+    const screen1200 = screenWidth <= 1200
+
 
     const saveTobasket = () => {
         dispatch(setCurrentBasketPhotodocInfo(currentSize))
@@ -67,7 +71,13 @@ export const Constructor = () => {
             physicalType
         }
     }
-    
+
+    const getPaddingClass = (photoQuantity) => {
+        if (photoQuantity > 4) return 'w-1200:pt-[600px]';
+        if (photoQuantity > 2) return 'w-1200:pt-[430px]';
+        return 'w-1200:pt-[260px]';
+    };
+
     if (!currentSize) {
         return (
             <div className='flex items-center justify-center fixed inset-0 bg-white'>
@@ -83,25 +93,44 @@ export const Constructor = () => {
     return (
         <section className='relative mb-0'>
             <div className="container">
-                <div className="title-box withoutMargin text-center">
+                <div className="title-box text-center">
                     <h2>Конструктор заказа</h2>
                     <h3>Выберите количество и тип фотографий</h3>
                 </div>
-                <div className='flex flex-col'>
-                    <div className='flex mb-[70px] min-h-[550px]'>
-                        <div className='grow basis-0 flex gap-[20px] '>
-                            <FunctionalBar
-                                currentPhotoStore={currentPhotoStore}
-                            />
-                        </div>
-                        <PhotoArea />
-                        <div className='basis-0 grow flex justify-end'>
-                            <Check
-                                photoDoc={true}
-                                currentSize={currentSize}
-                                currentPhotoStore={currentPhotoStore} /
-                            >
-                        </div>
+                <div className='flex flex-col '>
+                    <div className={`flex justify-between mb-[70px] min-h-[550px] w-1200:gap-[40px] transition-all  w-1200:flex-col w-1200:relative ${getPaddingClass(photoQuantity)}`}>
+                        {
+                            !screen1200
+                                ? <>
+                                    <FunctionalBar currentPhotoStore={currentPhotoStore} />
+                                    <PhotoArea
+                                        photoQuantity={photoQuantity}
+                                        setPhotoQuantity={setPhotoQuantity}
+                                        screenWidth={screenWidth}
+                                    />
+                                    <Check
+                                        photoDoc={true}
+                                        currentSize={currentSize}
+                                        currentPhotoStore={currentPhotoStore} /
+                                    >
+
+                                </>
+                                :
+                                <>
+                                    <PhotoArea
+                                        photoQuantity={photoQuantity}
+                                        setPhotoQuantity={setPhotoQuantity}
+                                    />
+                                    <div className='flex justify-center gap-[30px]'>
+                                        <FunctionalBar currentPhotoStore={currentPhotoStore} />
+                                        <Check
+                                            photoDoc={true}
+                                            currentSize={currentSize}
+                                            currentPhotoStore={currentPhotoStore} /
+                                        >
+                                    </div>
+                                </>
+                        }
                     </div>
                     <Link className='btn mx-auto' to={PATHNAMES.order} onClick={saveTobasket}>
                         Заказать

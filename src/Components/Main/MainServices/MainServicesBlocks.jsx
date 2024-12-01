@@ -10,7 +10,7 @@ export const MainServicesBlock = ({ service }) => {
                 {service.title}
                 <FontAwesomeIcon className='ml-iconMarginX' icon={faPaintBrush} />
             </h4>
-            <ul className='mb-[15px]'>
+            <ul className='mb-[15px] w-820:text-base'>
                 {service.serviceParagraphs.map((item, index) => (
                     <li key={index}>— {item}</li>
                 ))}

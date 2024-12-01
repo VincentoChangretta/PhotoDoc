@@ -1,5 +1,5 @@
 .icon-btn {
-    @apply w-[60px] h-[60px] flex justify-center items-center relative text-2xl font-bold bg-textColor text-white rounded-full overflow-hidden hover:before:top-0
+    @apply w-[60px] h-[60px] flex justify-center items-center gap-[10px] shrink-0 relative text-2xl font-bold bg-textColor text-white rounded-full overflow-hidden hover:before:top-0
 }
 
 .icon-btn::before {

@@ -4,8 +4,6 @@ import { Header } from './Components/Global/Header'
 import { Navigation } from './Components/Navigation'
 
 function App() {
-  console.log('render app')
-  
   return (
     <>
       <div className="wrapper">

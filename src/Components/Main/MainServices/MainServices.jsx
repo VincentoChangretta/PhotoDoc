@@ -13,9 +13,9 @@ export const MainServices = () => {
                         Также мы занимаемся ретушью и реставрацией фотографий
                     </h2>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center w-1630:gap-[40px] w-1630:flex-wrap w-1630:justify-center">
                     <div className="section-content max-w-[1150px] ">
-                        <div className='flex gap-[30px]'>
+                        <div className='flex gap-[30px] w-1160:flex-col'>
                             {MainServicesArr.map(service => (
                                 <div key={service.id} className='bg-gray p-[30px] rounded-elementRounded'>
                                     <MainServicesBlock service={service} />

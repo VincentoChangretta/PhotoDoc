@@ -18,6 +18,7 @@ import Restoration1 from "../src/Images/Restoration1.jpg";
 import Restoration2 from "../src/Images/Restoration2.jpg";
 import Retouch1 from "../src/Images/retouchAnim.jpg";
 import Retouch2 from "../src/Images/retouchAnim1.jpg";
+import mainImg from "../src/Images/mainImg.jpg";
 
 export {
   docImg,
@@ -40,4 +41,5 @@ export {
   Restoration2,
   Retouch1,
   Retouch2,
+  mainImg,
 };

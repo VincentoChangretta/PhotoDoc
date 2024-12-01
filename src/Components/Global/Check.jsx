@@ -49,7 +49,7 @@ export const Check = ({ photoDoc, currentSize, currentPhotoStore }) => {
 
     if (photoDoc) {
         return (
-            <div className='check grow basis-0 '>
+            <div className='check'>
                 <div className='mb-[20px]'>
                     <div className='text-center'>
                         <h3 className='text-3xl font-bold mb-[20px]'>Чек</h3>

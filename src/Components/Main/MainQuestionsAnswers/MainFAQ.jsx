@@ -27,10 +27,10 @@ export const MainFAQ = () => {
               className="mb-[3px] overflow-hidden border-t border-textColor last-of-type:mb-0"
             >
               <div
-                className="flex justify-between items-center cursor-pointer py-[16px]"
+                className="flex justify-between items-center cursor-pointer py-[16px] w-700:py-[8px]"
                 onClick={() => toggleQuestion(item.id)}
               >
-                <p className="pr-[50px] text-3xl font-extrabold">{item.question}</p>
+                <p className="pr-[50px] text-3xl font-extrabold w-1050:text-2xl w-820:text-xl w-700:text-xl">{item.question}</p>
                 <button
                   className="text-3xl font-extrabold transition-all"
                   style={{
@@ -47,7 +47,7 @@ export const MainFAQ = () => {
                   paddingBottom: activeQuestions.includes(item.id) ? '16px' : '0', // Добавляем отступы только для активного элемента
                 }}
               >
-                <p className='text-xl'>{item.answer}</p>
+                <p className='text-xl w-820:text-base w-700:text-base'>{item.answer}</p>
               </div>
             </div>
           ))}

@@ -12,6 +12,7 @@ import { Retouch } from './Retouch/Retouch';
 import { AboutUs } from './AboutUs/AboutUs';
 import { Delivery } from './Delivery/Delivery';
 import { PrivacyPolicy } from './PrivacyPolicy/PrivacyPolicy';
+import { SupportProject } from './Cooperation/SupportProject';
 
 export const promoCodeModalContext = createContext("no provider")
 
@@ -31,6 +32,7 @@ export const Navigation = () => {
                     <Route path={PATHNAMES.aboutUs} element={<AboutUs />} />
                     <Route path={PATHNAMES.delivery} element={<Delivery />} />
                     <Route path={PATHNAMES.privacyPolicy} element={<PrivacyPolicy />} />
+                    <Route path={PATHNAMES.supportProject} element={<SupportProject />} />
                 </Routes>
                 {promoCodeModal && <PromoCode />}
             </promoCodeModalContext.Provider>

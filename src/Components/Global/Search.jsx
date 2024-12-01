@@ -6,35 +6,47 @@ import { allServiceData, PHOTODOC } from '../../../public/AppData';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { currentSizeChanger } from '../../Redux/currentSizeReducer';
-
+import { useTypingAnimation } from '../../Hooks/useTypingAnimation';
+import { useDebounce } from 'use-debounce';
 export const Search = () => {
     const [findedServices, setFindedServices] = useState([]);
     const [notFound, setNotFound] = useState(false);
     const searchInput = useInput('');
     const [isFocused, setIsFocused] = useState(false);
+    const strings = ['Фото на паспорт', 'Ретушь фотографий', 'Реставрация фотографий']
+    const [textInArrayCur, setTextInArrayCur] = useState(0)
+    const [debouncedSearch] = useDebounce(searchInput.value, 20);
+    const placeholderText = useTypingAnimation(
+        strings,
+        textInArrayCur,
+        setTextInArrayCur
+    )
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (searchInput.value.length > 0) {
-            const newFindedServices = [];
-            for (const key in allServiceData) {
-                const serviceData = allServiceData[key];
-                if (Array.isArray(serviceData)) {
-                    const findService = serviceData.filter(item =>
-                        item.name?.toLowerCase().includes(searchInput.value.toLowerCase()) ||
-                        item.title?.toLowerCase().includes(searchInput.value.toLowerCase()) ||
-                        item.tag?.toLowerCase().includes(searchInput.value.toLowerCase())
-                    );
-                    newFindedServices.push(...findService);
-                }
-            }
-            setFindedServices(newFindedServices);
-            setNotFound(newFindedServices.length === 0);
-        } else {
+        if (debouncedSearch.length === 0) {
             setFindedServices([]);
             setNotFound(false);
+            return;
         }
-    }, [searchInput.value]);
+
+        const newFindedServices = [];
+        // Фильтрация данных аналогична
+        for (const key in allServiceData) {
+            const serviceData = allServiceData[key];
+            if (Array.isArray(serviceData)) {
+                const findService = serviceData.filter(item =>
+                    item.name?.toLowerCase().replaceAll(" ", "").includes(debouncedSearch.toLowerCase().replaceAll(" ", "")) ||
+                    item.title?.toLowerCase().replaceAll(" ", "").includes(debouncedSearch.toLowerCase().replaceAll(" ", "")) ||
+                    item.tag?.toLowerCase().replaceAll(" ", "").includes(debouncedSearch.toLowerCase().replaceAll(" ", ""))
+                );
+                newFindedServices.push(...findService);
+            }
+        }
+
+        setFindedServices(newFindedServices);
+        setNotFound(newFindedServices.length === 0);
+    }, [debouncedSearch]);
 
     const toPathname = item => {
         if (item.type === PHOTODOC) {
@@ -44,14 +56,14 @@ export const Search = () => {
     }
 
     return (
-        <div className='input-box relative max-w-[430px] p-[20px] pl-[60px] bg-textColorHover'>
+        <div className='input-box relative max-w-[430px] p-[17px] pl-[60px] bg-textColorHover w-1400:max-w-[350px] w-420:max-w-[300px] w-420:pl-[50px]'>
             <FontAwesomeIcon
                 className={`absolute top-[50%] left-[25px] translate-y-[-50%] transition-all duration-100 ${searchInput.isActive ? 'text-textColor' : 'text-placeholder'}`}
                 icon={faMagnifyingGlass}
             />
             <input
                 type="search"
-                placeholder='Поиск по сайту'
+                placeholder={placeholderText}
                 value={searchInput.value}
                 onChange={searchInput.onChange}
                 onFocus={() => setIsFocused(true)}

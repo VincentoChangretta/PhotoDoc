@@ -12,7 +12,7 @@ export const RestorationTop = () => {
                     <h2>Реставрация</h2>
                     <h3>Новый вдох в старые фотографии!</h3>
                 </div>
-                <div className='flex gap-[50px] items-center'>
+                <div className='flex gap-[50px] items-center mb-[50px]'>
                     <PictureRetoucher className="max-w-[500px]" img1={Restoration1} img2={Restoration2} />
                     <div className='max-w-[1000px]'>
                         <h3 className='text-4xl font-extrabold mb-[40px]'>Реставрация фотографий на заказ – это отличный способ вернуть первоначальный вид поврежденному изображению.</h3>

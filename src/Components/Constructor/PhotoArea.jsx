@@ -4,15 +4,13 @@ import { MAX_PHOTO_QUANTITY_IN_DESIGN } from '../../../public/AppData';
 import { useSelector } from 'react-redux';
 import './PhotoArea.css'
 
-export const PhotoArea = () => {
-
-    const [photoQuantity, setPhotoQuantity] = useState(0)
+export const PhotoArea = ({ screenWidth, photoQuantity, setPhotoQuantity }) => {
     const { currentElectroQuantity: electroQuantity, currentPhysicalQuantity: physicalQuantity }
         = useSelector(state => state.currentPhotoDocQuantity);
     const { electroPhotoType: electroType, physicalPhotoType: physicalType }
         = useSelector(state => state.currentPhotoType)
     const colorState = useSelector(state => state.currentPhotoColor.colored)
-    
+
     const toRenderByType = (quantity) => {
         if (quantity > MAX_PHOTO_QUANTITY_IN_DESIGN) {
             setPhotoQuantity(MAX_PHOTO_QUANTITY_IN_DESIGN)
@@ -32,8 +30,10 @@ export const PhotoArea = () => {
     }, [electroQuantity, physicalQuantity, electroType, physicalType])
 
     return (
-        <div className='grow flex justify-center items-center'>
-            <div className={`${photoQuantity > 6 ? 'max-w-[400px]' : 'max-w-[280px]'} photodoc-bg `}>
+        <div className='shrink-0 flex justify-center items-center w-1200:absolute w-1200:top-0 w-1200:left-[50%] w-1200:translate-x-[-50%]'>
+            <div className={
+                `${photoQuantity > 6 ? 'max-w-[400px] w-[400px]' : 'max-w-[280px]'} photodoc-bg`
+            }>
                 <span
                     className={
                         `${electroType || electroType && physicalType ? '' : 'hidden'} 
