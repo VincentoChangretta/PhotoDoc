@@ -73,9 +73,15 @@ export const Constructor = () => {
     }
 
     const getPaddingClass = (photoQuantity) => {
-        if (photoQuantity > 4) return 'w-1200:pt-[600px]';
-        if (photoQuantity > 2) return 'w-1200:pt-[430px]';
-        return 'w-1200:pt-[260px]';
+        if (screenWidth > 500) {
+            if (photoQuantity > 4) return 'w-1200:pt-[600px]';
+            if (photoQuantity > 2) return 'w-1200:pt-[430px]';
+            return 'w-1200:pt-[260px]'
+        } else {
+            if (photoQuantity > 4) return 'w-1200:pt-[460px]';
+            if (photoQuantity > 2) return 'w-1200:pt-[340px]';
+            return 'w-500:pt-[220px]'
+        }
     };
 
     if (!currentSize) {
@@ -121,7 +127,7 @@ export const Constructor = () => {
                                         photoQuantity={photoQuantity}
                                         setPhotoQuantity={setPhotoQuantity}
                                     />
-                                    <div className='flex justify-center gap-[30px]'>
+                                    <div className='flex justify-center gap-[30px] w-750:flex-wrap'>
                                         <FunctionalBar currentPhotoStore={currentPhotoStore} />
                                         <Check
                                             photoDoc={true}

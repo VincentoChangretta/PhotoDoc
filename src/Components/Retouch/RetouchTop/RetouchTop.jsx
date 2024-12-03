@@ -12,19 +12,19 @@ export const RetouchTop = () => {
                     <h2>Ретушь</h2>
                     <h3>Преобразите свои фотографии с профессиональной ретушью</h3>
                 </div>
-                <div className='flex items-center gap-[50px] mb-[50px]'>
+                <div className='section-content flex items-center gap-[50px] mb-[50px] w-1370:flex-wrap w-1370:justify-center'>
                     <PictureRetoucher className="max-w-[500px]" img1={Retouch1} img2={Retouch2} />
-                    <div className='max-w-[1000px]'>
-                        <h3 className='text-3xl font-extrabold mb-[40px]'>Профессиональная ретушь способна улучшить даже самое невзрачное изображение. Наша студия работает как с бытовыми снимками, так и с профессиональными. Мы очень аккуратно подходим к обработке фотографий:</h3>
+                    <div className='max-w-[1000px] w-1370:text-center w-670:text-left'>
+                        <h4 className='font-extrabold mb-[40px]'>Профессиональная ретушь способна улучшить даже самое невзрачное изображение. Мы очень аккуратно подходим к реставрации фотографий:</h4>
                         <ul className='flex flex-col gap-[10px]'>
-                            <li>— подчеркнем достоинства Вашей внешности, уберем недостатки</li>
-                            <li>— максимально сохраним естественность лица</li>
-                            <li>— не оставим следов фотошопа</li>
-                            <li>— обработаем фото точно в срок и учтем все Ваши пожелания</li>
+                            <li className='text-lg'>— подчеркнем достоинства Вашей внешности, уберем недостатки</li>
+                            <li className='text-lg'>— максимально сохраним естественность лица</li>
+                            <li className='text-lg'>— не оставим следов фотошопа</li>
+                            <li className='text-lg'>— обработаем фото точно в срок и учтем все Ваши пожелания</li>
                         </ul>
                     </div>
                 </div>
-                <div className='flex justify-center gap-[50px] mb-[30px]'>
+                <div className='flex justify-center gap-[50px] mb-[30px] w-1330:flex-wrap'>
                     {retouchPriceData.map(item => (
                         <ServicePriceCard key={item.id} data={item} />
                     ))}
@@ -32,7 +32,7 @@ export const RetouchTop = () => {
                 <h3 className='text-3xl text-center font-extrabold mb-[40px]'>При заказе от 10 фотографий действуют выгодные ссылки - от 15%!</h3>
                 <div>
                     <h3 className='text-3xl text-center font-extrabold mb-[40px]'>Особенности заказа</h3>
-                    <div className='flex gap-[50px]'>
+                    <div className='flex gap-[30px] flex-wrap justify-center'>
                         <p className='p-[30px] max-w-[800px] bg-invertedTextColor rounded-elementRounded shadow-cardShadow'>
                             Красота – дело вкуса, и каждый видит ее по-своему. Поэтому перед тем, как заказать ретушь для фото, обязательно расскажите мастеру о своих предпочтениях. Или оставьте обработку фото на наше усмотрение!
                         </p>

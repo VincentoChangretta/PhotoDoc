@@ -1,6 +1,6 @@
 .photodoc-deliveryDate {
-  @apply max-w-fit relative z-[1001] py-[10px] px-[25px] pr-[40px] bg-textColor text-invertedTextColor rounded-elementRounded cursor-pointer;
+  @apply max-w-fit relative z-[1001] py-[10px] px-[25px] pr-[40px] bg-textColor text-invertedTextColor rounded-elementRounded cursor-pointer text-nowrap;
 }
 .photodoc-city{
-  @apply absolute z-[1000] left-[10px] top-[50%] translate-y-[-50%] bg-textColor text-invertedTextColor py-[10px] px-[25px] rounded-elementRounded cursor-pointer hover:bg-textColorHover
+  @apply absolute z-[1000] left-[10px] top-[50%] translate-y-[-50%] bg-textColor text-invertedTextColor py-[10px] px-[25px] rounded-elementRounded cursor-pointer hover:bg-textColorHover w-540:top-[35px] w-540:left-[20px]  text-lg
 }

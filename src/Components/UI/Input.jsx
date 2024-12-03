@@ -10,30 +10,19 @@ export const Input = ({
     placeholder,
     required,
     className,
-    setPromoCodeValue,
+    promoCode,
     textCenter,
-    setNewSizeWidth,
-    setNewSizeHeight,
     dateNow,
-    setPhotoCodeValue,
+    getValue,
 }) => {
 
     const { value, onChange, isActive } = useInput()
     const [parrentActiveOption, setParrentActiveOption] = useState(null)
-
-
     useEffect(() => {
-        if (setPromoCodeValue) {
-            setPromoCodeValue(value)
-        } else if (setNewSizeWidth) {
-            setNewSizeWidth(value)
-        } else if (setNewSizeHeight) {
-            setNewSizeHeight(value)
-        } else if (setPhotoCodeValue) {
-            setPhotoCodeValue(value)
+        if(getValue){
+            getValue(value)
         }
     }, [value])
-
 
     if (withSelect) {
         return (
@@ -61,7 +50,7 @@ export const Input = ({
                 value={value}
                 onChange={onChange}
                 required={required}
-                className={`${textCenter ? 'text-center text-2xl font-extrabold' : ''}`}
+                className={`${textCenter || promoCode ? 'text-center text-2xl font-extrabold w-600:text-xl' : ''}`}
             />
         </div>
     );

@@ -8,7 +8,7 @@ export const DeliveryTop = () => {
                 <div className="title-box text-center">
                     <h2 className="text-2xl font-bold mb-4">Информация о доставке</h2>
                 </div>
-                <div className='flex gap-[30px] text-xl mb-[30px]'>
+                <div className='flex gap-[30px] text-xl mb-[30px] w-1600:flex-wrap w-1600:justify-center'>
                     <div className=' flex flex-col gap-[20px] p-[30px] bg-invertedTextColor rounded-elementRounded max-w-[800px] shadow-xl transition-all hover:scale-[1.02]'>
                         <p>
                             Мы рады сообщить вам, что в данный момент осуществляем доставку фотографий по городу

@@ -14,7 +14,7 @@ export const links = {
   telegram: "https://www.google.com",
 };
 
-export const PHOTODOC = "Фото на документ"
+export const PHOTODOC = "Фото на документ";
 
 export const SIZE_2x3 = "2x3";
 export const SIZE_25x35 = "2.5x3.5";
@@ -67,9 +67,12 @@ export const RESTORATION_PRICE_DELIVERY = 300;
 export const RESTORATION_PHYSICAL_QUANTITY = 1;
 export const RESTORATION_PRICE_ADDITIONAL = 50;
 
-export const DELIVERY_CITYIES = {
-  Kaliningrad: "Калининград",
-};
+export const DELIVERY_CITYIES = [
+  "г. Калининград",
+  "п. Ласкино",
+  "Новое Голубево",
+  "п. Яблоневка",
+];
 
 // delivery time
 export const TIME_12 = "12:00";
@@ -108,7 +111,7 @@ export const PATHNAMES = {
   order: "/order",
   delivery: "/delivery",
   privacyPolicy: "/privacy-policy",
-  supportProject: "/support-project"
+  supportProject: "/support-project",
 };
 
 export const TYPES = {
@@ -179,7 +182,7 @@ export const mainTopImgArr = [
 export const photoDocumentArr = [
   {
     id: SIZE_25x35,
-    type: PHOTODOC,                
+    type: PHOTODOC,
     name: `Фото ${SIZE_25x35}`,
     descr: "Для школьных документов и удостоверений",
     priceOnline: PHOTODOC_PRICE_ONLINE,
@@ -190,8 +193,8 @@ export const photoDocumentArr = [
     pathname: PATHNAMES.constructor,
   },
   {
-    id: SIZE_3x4, 
-    type: PHOTODOC,            
+    id: SIZE_3x4,
+    type: PHOTODOC,
     name: `Фото ${SIZE_3x4}`,
     descr: "Стандартный размер для большинства документов",
     priceOnline: PHOTODOC_PRICE_ONLINE,
@@ -203,7 +206,7 @@ export const photoDocumentArr = [
   },
   {
     id: SIZE_35x45,
-    type: PHOTODOC,     
+    type: PHOTODOC,
     name: `Фото ${SIZE_35x45}`,
     descr: "Подойдет на паспорт, загранпаспорт, визы",
     priceOnline: PHOTODOC_PRICE_ONLINE,
@@ -432,16 +435,20 @@ export const restorationPriceData = [
     title: "Базовая реставрация фотографий",
     text: "Помогает при небольших повреждениях (10-40%). Включает удаление мелких пятен и царапин, цветокоррекцию и тонирование, дорисовку небольших участков.",
     price: RESTORATION_PRICE,
-    tags: ["реставрация, фото, старые фото, реставрация фотографий, реставрация фото, фото реставрация"],
-    pathname: PATHNAMES.restoration
+    tags: [
+      "реставрация, фото, старые фото, реставрация фотографий, реставрация фото, фото реставрация",
+    ],
+    pathname: PATHNAMES.restoration,
   },
   {
     id: "restoration-2",
     title: "Сложная реставрация фотографий",
     text: "Помогает при сильных повреждениях (от 40%). Включает дорисовку крупных объектов и углов; удаление больших трещин; коррекцию светотени и резкости; устранение мутности, зернистости, муара и тиснения с полным восстановлением фото",
     price: HARD_RESTORATION_PRICE,
-    tags: ["реставрация, фото, старые фото, реставрация фотографий, реставрация фото, фото реставрация"],
-    pathname: PATHNAMES.restoration
+    tags: [
+      "реставрация, фото, старые фото, реставрация фотографий, реставрация фото, фото реставрация",
+    ],
+    pathname: PATHNAMES.restoration,
   },
 ];
 
@@ -451,24 +458,30 @@ export const retouchPriceData = [
     title: "Комплексная ретушь одного человека",
     text: "Может включать в себя что-то из следующих пожеланий - ретушь кожи; пластику фигуры; коррекцию прически, одежды или макияжа.",
     price: RETOUCH_COMPLEX_PRICE,
-    tags: ["ретушь, обработка, фото, фотографии, ретушь фотографий, фото ретушь, фотография ретушь, фотографии ретушь"],
-    pathname: PATHNAMES.retouch
+    tags: [
+      "ретушь, обработка, фото, фотографии, ретушь фотографий, фото ретушь, фотография ретушь, фотографии ретушь",
+    ],
+    pathname: PATHNAMES.retouch,
   },
   {
     id: "retouch-2",
     title: "Комплексная ретушь группового портрета",
     text: "Может включать в себя что-то из следующих пожеланий - ретушь кожи; пластику фигуры; коррекцию прически, одежды или макияжа.",
     price: RETOUCH_COMPLEX_GROUP_PRICE,
-    tags: ["ретушь, обработка, фото, фотографии, ретушь фотографий, фото ретушь, фотография ретушь, фотографии ретушь"],
-    pathname: PATHNAMES.retouch
+    tags: [
+      "ретушь, обработка, фото, фотографии, ретушь фотографий, фото ретушь, фотография ретушь, фотографии ретушь",
+    ],
+    pathname: PATHNAMES.retouch,
   },
   {
     id: "retouch-3",
     title: "Beauty ретушь",
     text: "Глубокая журнальная или глянцевая обработка всего фото. Ретушь для портфолио и модельных тестов. Используется техника частотного разложения, а также dodge&burn.",
     price: RETOUCH_BEAUTY_PRICE,
-    tags: ["ретушь, обработка, фото, фотографии, ретушь фотографий, фото ретушь, фотография ретушь, фотографии ретушь"],
-    pathname: PATHNAMES.retouch
+    tags: [
+      "ретушь, обработка, фото, фотографии, ретушь фотографий, фото ретушь, фотография ретушь, фотографии ретушь",
+    ],
+    pathname: PATHNAMES.retouch,
   },
 ];
 

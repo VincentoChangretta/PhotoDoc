@@ -5,5 +5,5 @@
     @apply relative py-[10px] px-[15px] rounded-elementRounded cursor-pointer
 }
 .photodoc-deliveryTime{
-    @apply max-w-fit relative z-[999] py-[10px] px-[25px] pr-[40px] bg-textColor text-invertedTextColor rounded-elementRounded cursor-pointer;
+    @apply max-w-fit relative z-[999] py-[10px] px-[25px] pr-[40px] bg-textColor text-invertedTextColor rounded-elementRounded cursor-pointer text-nowrap;
 }

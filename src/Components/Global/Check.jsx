@@ -59,17 +59,19 @@ export const Check = ({ photoDoc, currentSize, currentPhotoStore }) => {
                     </div>
                     <div className='mb-[20px] '>
                         <span className='font-bold text-xl'>Общая стоимость:</span>
-                        {electroQuantity && electroType
-                            ? <p>— электронный: {electroQuantity}шт. - {totalElectroSum}₽</p>
-                            : null
-                        }
-                        {physicalQuantity && physicalType
-                            ? <p>— бумажный формат: {physicalQuantity}шт. - {totalPhysicalSum}₽ <strong className='pl-[15px]'>(с доставкой)</strong></p>
-                            : null
-                        }
-                        {
-                            clothSavedState && clothState && <p>— форма: {PHOTODOC_CLOTH_PRICE}₽</p>
-                        }
+                        <div className='text-lg'>
+                            {electroQuantity && electroType
+                                ? <p>— электронный: {electroQuantity}шт. - {totalElectroSum}₽</p>
+                                : null
+                            }
+                            {physicalQuantity && physicalType
+                                ? <p>— бумажный формат: {physicalQuantity}шт. - {totalPhysicalSum}₽ <strong className='pl-[15px] w-385:pl-0'>(с доставкой)</strong></p>
+                                : null
+                            }
+                            {
+                                clothSavedState && clothState && <p>— форма: {PHOTODOC_CLOTH_PRICE}₽</p>
+                            }
+                        </div>
                     </div>
                     <div className='flex flex-col items-center gap-[5px] text-xl font-bold'>
                         <span>В сумме:</span>

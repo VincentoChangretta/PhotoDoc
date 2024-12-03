@@ -6,8 +6,6 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { ModalCloser } from './ModalCloser';
 export const OrderInformation = ({ currentPhotoStore, setInfoModal }) => {
 
-    console.log(currentPhotoStore)
-
     const infoModalRef = useRef(null);
     useEffect(() => {
         const handleChange = e => {
@@ -23,11 +21,11 @@ export const OrderInformation = ({ currentPhotoStore, setInfoModal }) => {
         <div className='fixed flex justify-center items-center inset-0 z-[2000] backdrop-blur	'>
             <div ref={infoModalRef} className='order-information'>
                 <ModalCloser closeModal={setInfoModal} />
-                <h3 className='text-4xl font-bold mb-[25px]'>
+                <h3 className='text-4xl font-bold mb-[25px] w-560:text-2xl w-420:max-w-[250px]'>
                     Информация о заказе
                     <FontAwesomeIcon className='ml-iconMarginX' icon={faCircleInfo} />
                 </h3>
-                <h3 className='text-4xl font-extrabold mb-[25px]'>
+                <h3 className='text-4xl font-extrabold mb-[25px] w-560:text-2xl'>
                     {currentPhotoStore.photoInfo.info.name}
                 </h3>
                 <div className='flex flex-col gap-[10px] text-4xl mb-[25px]'>
@@ -55,7 +53,7 @@ export const OrderInformation = ({ currentPhotoStore, setInfoModal }) => {
                         </p>
                     }
                 </div>
-                <p className='text-4xl font-extrabold'>
+                <p className='text-4xl font-extrabold w-560:text-2xl'>
                     <strong>Цена: </strong>
                     {currentPhotoStore.photoInfo.price + RUBLE}
                 </p>

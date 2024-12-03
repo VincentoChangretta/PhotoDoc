@@ -36,12 +36,6 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
     const electroPhoto = currentPhotoStore.type.electroType ? currentPhotoStore.quantity.electroQuantity : 0
     const physicalPhoto = currentPhotoStore.type.physicalType ? currentPhotoStore.quantity.physicalQuantity : 0
 
-
-
-
-
-
-
     useEffect(() => {
         if (currentPhotoStore.photoInfo.info.id !== prevPhoto?.id) {
             dispatch(currentClientPhotoCodeCreator(null))
@@ -69,8 +63,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                 }
                 className={classes.form}
             >
-                <h2 className='text-3xl font-bold mb-[40px]'>Форма</h2>
-                <div className='flex gap-[50px] mb-[20px]'>
+                <div className='flex gap-[50px] mb-[20px] w-1520:flex-wrap w-1520:justify-center w-1050:gap-[20px]'>
                     <div className={classes['form_block']}>
                         <Input
                             name="name"
@@ -107,8 +100,8 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                         <input readOnly name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
                         <input readOnly name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
                     </div>
-                    <div className='flex flex-col justify-between'>
-                        <div className='flex flex-col gap-[15px] p-[30px] bg-grayHover rounded-elementRounded'>
+                    <div className='flex flex-col justify-between gap-[20px]'>
+                        <div className='flex flex-col gap-[15px] p-[30px] bg-grayHover rounded-elementRounded w-1520:items-center w-460:p-[15px]'>
                             <button
                                 type='button'
                                 className='btn'
@@ -133,7 +126,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                                 <FontAwesomeIcon className='ml-[10px] text-xl' icon={faCircleInfo} />
                             </button>
                         </div>
-                        <div className='flex flex-col gap-[10px] justify-end'>
+                        <div className='flex flex-col gap-[10px] justify-end w-1520:items-center'>
                             <CheckboxVerification
                                 errorStatus={privacyError}
                                 stateChanger={setPrivacyCheckbox}

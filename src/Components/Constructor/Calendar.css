@@ -1,5 +1,5 @@
 .calendar {
-  @apply absolute z-[1000] top-0 left-0 p-[20px] pt-[105px] rounded-elementRounded border-none overflow-hidden shadow-xl select-none;
+  @apply absolute z-[1000] top-0 left-0 p-[20px] pt-[115px] rounded-elementRounded border-none overflow-hidden shadow-xl select-none w-540:left-[50%] w-540:translate-x-[-50%] w-420:h-[420px] w-420:w-[420px];
 }
 
 .react-calendar__tile--active {

@@ -15,7 +15,7 @@
 
 body {
   font: 18px "Manrope", "Montserrat", serif;
-  @apply text-textColor bg-slate-100 w-420:text-sm;
+  @apply text-textColor bg-slate-100 w-420:text-lg;
   background-image: linear-gradient(
       55deg,
       rgba(208, 208, 208, 0.03) 0%,
@@ -149,6 +149,10 @@ body {
   @apply flex flex-col min-h-[100svh];
 }
 
+input{
+  background-color: #fff;
+}
+
 .main {
   @apply grow;
 }
@@ -239,7 +243,7 @@ section .title-box h3 {
 }
 
 section .section-content h4 {
-  @apply text-4xl font-bold mb-[30px] leading-none w-420:text-3xl;
+  @apply text-4xl font-bold mb-[30px] leading-none w-420:text-2xl;
 }
 
 .link {

@@ -5,9 +5,10 @@ import { useDispatch } from 'react-redux';
 import { ATTENTION_DATA, PATHNAMES, PHOTODOC_PHYSICAL_QUANTITY, PHOTODOC_PRICE_ADDITIONAL, PHOTODOC_PRICE_DELIVERY, PHOTODOC_PRICE_ONLINE, photoDocumentArr } from '../../../public/AppData';
 import { useNavigate } from 'react-router-dom';
 import { currentSizeChanger } from '../../Redux/currentSizeReducer';
+import { useWindowSize } from '../../Hooks/useWindowSize';
 
 export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
-
+    const screenWidth = useWindowSize()
     const createCustomSizeRef = useRef(null)
     const [newSizeWidth, setNewSizeWidth] = useState(null)
     const [newSizeHeight, setNewSizeHeight] = useState(null)
@@ -69,37 +70,39 @@ export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
     return (
         <div className='customSize-wrapper '>
             <div ref={createCustomSizeRef} className='customSize-modal'>
-                <h3 className='max-w-[500px] text-4xl font-extrabold mb-[30px] '>
+                <h3 className='max-w-[500px] text-4xl font-extrabold mb-[30px] w-460:text-2xl'>
                     Создайте собственный размер фото
                 </h3>
-                <p className='mb-[15px] leading-[35px]'>
-                    Например, чтобы получить фотографию
-                    <span className='customSize-size'>3.9 на 4.5</span> нужно ввести в поле ширины -
+                <p className='mb-[15px] leading-[35px] text-lg'>
+                    Например, чтобы получить фотографию 
+                    <span className='customSize-size text-nowrap'>3.9 на 4.5</span>
+                    нужно ввести в поле ширины -
                     <span className='customSize-size'>3.9</span>
                     , в поле высоты - <span className='customSize-size'>4.5</span> <br />
+
                 </p>
-                <p className={`${sizeError ? 'bg-errorColorNoOpacity' : 'bg-textColorHover'} transition-all max-w-fit p-[5px] px-[15px] mb-[15px] rounded-elementRounded`}>
+                <p className={`${sizeError ? 'bg-errorColorNoOpacity' : 'bg-textColorHover'} transition-all max-w-fit p-[5px] px-[15px] mb-[15px] rounded-elementRounded text-base`}>
                     {attentionText}
                 </p>
-                <div className='flex items-center gap-[30px] mb-[15px] bg-textColorHover rounded-elementRounded p-[20px] pb-[35px]'>
+                <div className='flex items-center gap-[30px] mb-[15px] bg-textColorHover rounded-elementRounded p-[20px] pb-[35px] w-460:flex-col'>
                     <label className='text-invertedTextColor text-center'>
-                        <p className='mb-[5px]'>Введите ширину</p>
+                        <p className='mb-[5px] text-base'>Введите ширину</p>
                         <Input
                             type="number"
                             placeholder="3.9"
                             className="max-w-[250px]"
                             textCenter={true}
-                            setNewSizeWidth={setNewSizeWidth}
+                            getValue={setNewSizeWidth}
                         />
                     </label>
                     <label className='text-invertedTextColor text-center'>
-                        <p className='mb-[5px]'>Введите высоту</p>
+                        <p className='mb-[5px] text-base'>Введите высоту</p>
                         <Input
                             type="number"
                             placeholder="4.5"
                             className="max-w-[250px]"
                             textCenter={true}
-                            setNewSizeHeight={setNewSizeHeight}
+                            getValue={setNewSizeHeight}
                         />
                     </label>
                 </div>
@@ -107,7 +110,7 @@ export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
                 <button className='btn inverted' onClick={handleSaveNewSize}>
                     Создать
                 </button>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

@@ -39,15 +39,15 @@ export const FunctionalBar = ({ currentPhotoStore }) => {
                 ))}
             </div>
             <div className='max-w-[280px] w-full'>
-                <p className='text-invertedTextColor text-center mb-[5px]'>Формат</p>
+                <h5 className='text-invertedTextColor text-center mb-[5px] text-lg'>Формат</h5>
                 <ChangerType format={true} />
             </div>
             <div className='max-w-[280px] w-full'>
-                <p className='text-invertedTextColor text-center mb-[5px]'>Цветность</p>
+                <h5 className='text-invertedTextColor text-center mb-[5px] text-lg'>Цветность</h5>
                 <ChangerType color={true} />
             </div>
             <div className='max-w-[280px] w-full'>
-                <p className='text-invertedTextColor text-center mb-[5px]'>Форма одежды</p>
+                <h5 className='text-invertedTextColor text-center mb-[5px] text-lg'>Форма одежды</h5>
                 <ChangerType cloth={true} />
             </div>
         </div>

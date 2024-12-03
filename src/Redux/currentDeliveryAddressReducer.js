@@ -2,7 +2,7 @@ import { DELIVERY_CITYIES } from "../../public/AppData";
 
 const initialState = {
   state: null,
-  city: DELIVERY_CITYIES.Kaliningrad,
+  city: DELIVERY_CITYIES[0],
   address: "",
 };
 

@@ -22,7 +22,7 @@ export const ModalForm = ({ data }) => {
     }
 
     return (
-        <div onClick={handleCloseModal} className='fixed z-[2000] inset-0 flex items-center justify-center backdrop-blur '>
+        <div onClick={handleCloseModal} className='fixed z-[2000] inset-0 flex items-center justify-center backdrop-blur'>
             <form
                 ref={formRef}
                 onSubmit={e =>
@@ -40,25 +40,19 @@ export const ModalForm = ({ data }) => {
                     )
                 }
                 onClick={e => e.stopPropagation()}
-                className='relative max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded'
+                className='relative max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded w-560:p-[20px]'
             >
                 <ModalCloser closeModal={() => dispatch(closeFormModalCreator())}/>
-                <div className='mb-[20px]'>
-                    <h2 className='text-4xl font-extrabold mb-[20px]'>{data.title}</h2>
+                <div className='mb-[20px] w-560:mb-[10px]'>
+                    <h2 className='text-4xl font-extrabold mb-[20px] w-560:text-xl w-560:max-w-[300px] w-560:mb-[10px]'>{data.title}</h2>
                     <p className='text-2xl font-extrabold'>от {data.price + RUBLE}</p>
                 </div>
-                <div className='flex flex-col gap-[10px]'>
-                    <h3>Заполните форму, чтобы оформить заказ</h3>
+                <div className='flex flex-col gap-[10px] w-560:gap-[5px]'>
+                    <h3 className='w-560:text-base'>Заполните форму, чтобы оформить заказ</h3>
                     <Input
                         name="name"
                         type="text"
                         placeholder="Ваше имя"
-                    />
-                    <Input
-                        name="phone"
-                        type="number"
-                        placeholder="Ваш номер телефона"
-                        required={true}
                     />
                     <Input
                         withSelect={true}
@@ -71,7 +65,7 @@ export const ModalForm = ({ data }) => {
                     <div className='hidden'>
                         <input readOnly name="price" type="text" value={`от ${data.price + RUBLE}`} />
                     </div>
-                    <div className='max-w-[450px] raletive p-[20px] bg-invertedTextColor text-textColor rounded-elementRounded'>
+                    <div className='max-w-[450px] raletive p-[20px] bg-invertedTextColor text-textColor rounded-elementRounded w-560:p-[10px]'>
                         <CheckboxVerification
                             errorStatus={privacyError}
                             stateChanger={setPrivacyCheckbox}

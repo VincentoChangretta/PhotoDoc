@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
 import { navArr, PATHNAMES } from '../../../public/AppData';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,23 @@ export const Header = () => {
     const screenWidth = useWindowSize()
     const [burgerMenu, setBurgerMenu] = useState(null)
     const isBurger = screenWidth < 1050;
+    const menuRef = useRef(null)
+
+    useEffect(() => {
+        if (isBurger) {
+            const closeMenu = (e) => {
+                console.log(e.target)
+
+                if (menuRef.current && !menuRef.current.contains(e.target)) {
+                    setBurgerMenu(false)
+                }
+            }
+            document.addEventListener("click", closeMenu)
+            return () => document.removeEventListener("click", closeMenu)
+        }
+    }, [isBurger])
+
+
 
     return (
         <header>
@@ -35,24 +52,29 @@ export const Header = () => {
                             <div className='text-4xl cursor-pointer'>
                                 <FontAwesomeIcon
                                     icon={faBars}
-                                    onClick={() => setBurgerMenu(prev => !prev)}
+                                    onClick={(e) => (e.stopPropagation(), setBurgerMenu(prev => !prev))}
                                 />
                             </div>
-                            <div className={`${!burgerMenu ? `translate-x-[350px] w-460:translate-x-[100%]` : ""} flex flex-col justify-center items-center fixed z-[1000] top-0 right-0 bottom-0 w-[350px] text-center bg-textColor text-invertedTextColor transition-all w-460:w-full`}>
+                            <div ref={menuRef} className={`${!burgerMenu ? `translate-x-[350px] w-460:translate-x-[100%]` : ""} flex flex-col justify-center items-center fixed z-[1000] top-0 right-0 bottom-0 w-[350px] text-center bg-textColor text-invertedTextColor transition-all w-460:w-full`}>
                                 <FontAwesomeIcon
                                     className='absolute top-[45px] right-[10px] text-4xl cursor-pointer'
                                     icon={faCircleXmark}
                                     onClick={() => setBurgerMenu(false)}
                                 />
-                                <ul className='flex flex-col gap-[30px] text-center text-lg'>
+                                <ul className='flex flex-col gap-[25px] text-center text-xl'>
                                     {navArr.map(navItem => (
                                         <li key={navItem.id}>
-                                            <Link to={navItem.pathname}>{navItem.item}</Link>
+                                            <Link
+                                                to={navItem.pathname}
+                                                onClick={() => setBurgerMenu(false)}
+                                            >
+                                                {navItem.item}
+                                            </Link>
                                         </li>
                                     ))}
-                                    <li><Link to={PATHNAMES.recommendations}>Рекомендации</Link></li>
-                                    <li><Link to={PATHNAMES.delivery}>Доставка</Link></li>
-                                    <li><Link to={PATHNAMES.supportProject}>Поддержать проект</Link></li>
+                                    <li><Link to={PATHNAMES.recommendations} onClick={() => setBurgerMenu(false)}>Рекомендации</Link></li>
+                                    <li><Link to={PATHNAMES.delivery} onClick={() => setBurgerMenu(false)}>Доставка</Link></li>
+                                    <li><Link to={PATHNAMES.supportProject} onClick={() => setBurgerMenu(false)}>Поддержать проект</Link></li>
                                 </ul>
                             </div>
                         </>

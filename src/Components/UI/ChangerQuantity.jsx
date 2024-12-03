@@ -39,9 +39,9 @@ export const ChangerQuantity = ({ electroQuantity, physicalQuantity, electroType
 
   return (
     <div className='relative w-[180px] flex items-center justify-between gap-[20px] p-[5px] rounded-elementRounded bg-white shadow-xl'>
-      <p className='absolute left-[50%] top-[-30px] translate-x-[-50%] text-white'>{type}</p>
+      <h5 className='absolute left-[50%] top-[-30px] translate-x-[-50%] text-white text-lg'>{type}</h5>
       <button className='btn small' onClick={handleGet}>-</button>
-      <p className='text-2xl'>{quantity}</p>
+      <h5 className='text-2xl'>{quantity}</h5>
       <button className='btn small' onClick={handleAdd}>+</button>
     </div>
   );

@@ -3,5 +3,5 @@
 }
 
 .order-information__text {
-    @apply max-w-fit bg-invertedTextColor text-textColor rounded-elementRounded py-[5px] px-[15px] text-xl
+    @apply max-w-fit bg-invertedTextColor text-textColor rounded-elementRounded py-[5px] px-[15px] text-xl w-560:text-lg
 }

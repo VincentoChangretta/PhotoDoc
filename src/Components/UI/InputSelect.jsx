@@ -49,7 +49,7 @@ export const InputSelect = ({ setParrentActiveOption }) => {
                 {select.map(option => (
                     <li
                         key={option.id}
-                        className='w-fit py-[10px] px-[20px] hover:bg-textColor rounded-elementRounded whitespace-nowrap cursor-pointer'
+                        className='text-base w-fit py-[10px] px-[20px] hover:bg-textColor rounded-elementRounded whitespace-nowrap cursor-pointer'
                         onClick={() => handleNewActive(option)}
                     >
                         {option.id}
