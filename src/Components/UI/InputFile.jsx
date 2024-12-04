@@ -32,7 +32,7 @@ export const InputFile = ({ fileInput, setFileInput }) => {
             <label className='absolute inset-0 cursor-pointer'>
                 <input
                     className='relative z-[-1] opacity-0'
-                    name="file"
+                    name="attachment"
                     type="file"
                     onChange={handleFileChange}
                     required

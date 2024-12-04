@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { currentClientPhotoCodeCreator } from '../../Redux/currentCliendPhotoCodeReducer';
 import { TextArea } from '../UI/TextArea';
 import { PHOTO_COLOR_COLORED, PHOTO_COLOR_COLORLESS, RUBLE } from '../../../public/AppData';
+import { HiddenSenderInputs } from '../Global/HiddenSenderInputs';
 
 export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoModal }) => {
 
@@ -62,7 +63,9 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                     )
                 }
                 className={classes.form}
+                enctype="multipart/form-data"
             >
+                <HiddenSenderInputs/>
                 <div className='flex gap-[50px] mb-[20px] w-1520:flex-wrap w-1520:justify-center w-1050:gap-[20px]'>
                     <div className={classes['form_block']}>
                         <Input

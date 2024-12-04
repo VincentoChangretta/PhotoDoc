@@ -4,13 +4,13 @@ export const fetchToMail = async (e, form) => {
   e.preventDefault();
   const formData = new FormData(form);
   console.log([...formData]);
-  
   try {
     const response = await fetch(mailto, {
       method: "POST",
       body: formData,
     });
     if (response.ok) {
+      console.log('sended');
       form.reset();
       return true;
     } else {

@@ -18,7 +18,7 @@ export const ToSavePhotoDoc = ({ setPhotoCodeValue }) => {
                 type="text"
                 dateNow={`${fullDate}`}
                 className="realtive pl-[160px]"
-                placeholder="Иванов"
+                placeholder="Ваш код"
                 getValue={setPhotoCodeValue}
             />
         </label>

@@ -22,7 +22,6 @@ export const Search = () => {
         setTextInArrayCur
     )
     const dispatch = useDispatch()
-
     useEffect(() => {
         if (debouncedSearch.length === 0) {
             setFindedServices([]);
@@ -56,7 +55,7 @@ export const Search = () => {
     }
 
     return (
-        <div className='input-box relative max-w-[430px] p-[17px] pl-[60px] bg-textColorHover w-1400:max-w-[350px] w-420:max-w-[300px] w-420:pl-[50px]'>
+        <div className={`inp-box relative max-w-[430px] p-[17px] pl-[60px] bg-textColorHover w-1400:max-w-[350px] w-420:max-w-[300px] w-420:pl-[50px] ${searchInput.value.length > 0 ? "rounded-t-elementRounded" : "rounded-elementRounded"}`}>
             <FontAwesomeIcon
                 className={`absolute top-[50%] left-[25px] translate-y-[-50%] transition-all duration-100 ${searchInput.isActive ? 'text-textColor' : 'text-placeholder'}`}
                 icon={faMagnifyingGlass}
@@ -77,7 +76,7 @@ export const Search = () => {
             }
             {
                 isFocused && searchInput.value.length > 0 &&
-                <div className='absolute z-[2000] left-0 right-0 top-[64%] pt-[10px] p-[20px] bg-invertedTextColor rounded-b-elementRounded flex flex-col gap-[5px] shadow-xl'>
+                <div className='absolute z-[2000] left-0 right-0 top-[40px] pt-[10px] p-[20px] bg-invertedTextColor rounded-b-elementRounded flex flex-col gap-[5px] shadow-xl'>
                     {notFound ? "Не найдено" : null}
                     {findedServices.length > 0 && findedServices.map((item, index) => (
                         <Link

@@ -200,7 +200,7 @@ input::-webkit-inner-spin-button {
 }
 
 .input-box {
-  @apply rounded-[30px];
+  @apply relative rounded-[30px] bg-invertedTextColor text-textColor; 
 }
 
 .input {

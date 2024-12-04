@@ -7,6 +7,7 @@ import { InputFile } from '../UI/InputFile';
 import { CheckboxVerification } from './Checkbox';
 import { handleSubmit } from '../../../public/functions';
 import { ModalCloser } from './ModalCloser';
+import { HiddenSenderInputs } from './HiddenSenderInputs';
 
 export const ModalForm = ({ data }) => {
     const formRef = useRef(null)
@@ -41,8 +42,10 @@ export const ModalForm = ({ data }) => {
                 }
                 onClick={e => e.stopPropagation()}
                 className='relative max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded w-560:p-[20px]'
+                enctype="multipart/form-data"
             >
-                <ModalCloser closeModal={() => dispatch(closeFormModalCreator())}/>
+                <HiddenSenderInputs />
+                <ModalCloser closeModal={() => dispatch(closeFormModalCreator())} />
                 <div className='mb-[20px] w-560:mb-[10px]'>
                     <h2 className='text-4xl font-extrabold mb-[20px] w-560:text-xl w-560:max-w-[300px] w-560:mb-[10px]'>{data.title}</h2>
                     <p className='text-2xl font-extrabold'>от {data.price + RUBLE}</p>

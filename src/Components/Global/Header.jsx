@@ -15,8 +15,6 @@ export const Header = () => {
     useEffect(() => {
         if (isBurger) {
             const closeMenu = (e) => {
-                console.log(e.target)
-
                 if (menuRef.current && !menuRef.current.contains(e.target)) {
                     setBurgerMenu(false)
                 }
