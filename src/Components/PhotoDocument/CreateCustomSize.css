@@ -2,7 +2,7 @@
     @apply fixed inset-0 z-[2000]  flex justify-center items-center backdrop-blur text-invertedTextColor;
 }
 .customSize-modal{
-    @apply max-w-[700px] w-full p-[50px] rounded-elementRounded bg-textColor w-460:p-[20px];
+    @apply relative max-w-[700px] w-full p-[50px] rounded-elementRounded bg-textColor w-460:p-[20px];
 }
 .customSize-size{
     @apply py-[2px] px-[10px] mx-[3px] bg-invertedTextColor text-textColor rounded-elementRounded;

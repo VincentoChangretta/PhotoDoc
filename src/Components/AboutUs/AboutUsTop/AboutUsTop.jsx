@@ -1,5 +1,8 @@
 import React from 'react';
 import { ButtonNavigator } from '../../Global/ButtonNavigator';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 export const AboutUsTop = () => {
     return (
@@ -62,7 +65,7 @@ export const AboutUsTop = () => {
                         </p>
                     </div>
                 </div>
-                <ButtonNavigator />
+ 
             </div>
         </section>
     );

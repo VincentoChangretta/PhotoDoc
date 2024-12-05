@@ -27,6 +27,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
         currentDeliveryDate,
         currentDeliveryTime,
     } = useSelector(state => state.currentDeliveryDate);
+    const orderByCodeState = useSelector(state => state.currentOrderByCode.code)
     const formRef = useRef(null)
     const dispatch = useDispatch()
 
@@ -65,7 +66,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                 className={classes.form}
                 enctype="multipart/form-data"
             >
-                <HiddenSenderInputs/>
+                <HiddenSenderInputs />
                 <div className='flex gap-[50px] mb-[20px] w-1520:flex-wrap w-1520:justify-center w-1050:gap-[20px]'>
                     <div className={classes['form_block']}>
                         <Input
@@ -86,7 +87,22 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                             withSelect={true}
                             required={currentPhotoStore.type.electroType}
                         />
-                        <InputFile fileInput={fileInput} setFileInput={setFileInput} />
+                        {
+                            !orderByCodeState
+                                ? <InputFile fileInput={fileInput} setFileInput={setFileInput} />
+                                : <div
+                                    className='p-[20px] rounded-elementRounded bg-textColor text-invertedTextColor text-base truncate'>
+                                    Фотография из архива - {orderByCodeState}
+                                    <input
+                                        readOnly
+                                        className='hidden'
+                                        name='orderByCode'
+                                        value={orderByCodeState}
+                                        type="text"
+                                    />
+                                </div>
+                        }
+
                     </div>
                     <div className={classes['form_block']}>
                         {currentPhotoStore.type.physicalType && <PhotoDocDelivery />}

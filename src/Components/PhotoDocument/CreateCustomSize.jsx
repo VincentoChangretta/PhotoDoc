@@ -6,6 +6,7 @@ import { ATTENTION_DATA, PATHNAMES, PHOTODOC_PHYSICAL_QUANTITY, PHOTODOC_PRICE_A
 import { useNavigate } from 'react-router-dom';
 import { currentSizeChanger } from '../../Redux/currentSizeReducer';
 import { useWindowSize } from '../../Hooks/useWindowSize';
+import { ModalCloser } from '../Global/ModalCloser';
 
 export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
     const screenWidth = useWindowSize()
@@ -70,11 +71,12 @@ export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
     return (
         <div className='customSize-wrapper '>
             <div ref={createCustomSizeRef} className='customSize-modal'>
-                <h3 className='max-w-[500px] text-4xl font-extrabold mb-[30px] w-460:text-2xl'>
+                <ModalCloser closeModal={setCreateCustomSizeModal}/>
+                <h3 className='max-w-[500px] pr-[40px] text-4xl font-extrabold mb-[30px] w-460:text-2xl'>
                     Создайте собственный размер фото
                 </h3>
-                <p className='mb-[15px] leading-[35px] text-lg'>
-                    Например, чтобы получить фотографию 
+                <p className='mb-[15px] leading-[35px] text-lg w-460:text-base w-460:leading-8'>
+                    Например, чтобы получить фотографию
                     <span className='customSize-size text-nowrap'>3.9 на 4.5</span>
                     нужно ввести в поле ширины -
                     <span className='customSize-size'>3.9</span>
@@ -84,7 +86,7 @@ export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
                 <p className={`${sizeError ? 'bg-errorColorNoOpacity' : 'bg-textColorHover'} transition-all max-w-fit p-[5px] px-[15px] mb-[15px] rounded-elementRounded text-base`}>
                     {attentionText}
                 </p>
-                <div className='flex items-center gap-[30px] mb-[15px] bg-textColorHover rounded-elementRounded p-[20px] pb-[35px] w-460:flex-col'>
+                <div className='flex items-center gap-[30px] mb-[15px] bg-textColorHover rounded-elementRounded p-[20px] pb-[35px] w-460:flex-col w-460:gap-[10px] w-460:pb-[20px]'>
                     <label className='text-invertedTextColor text-center'>
                         <p className='mb-[5px] text-base'>Введите ширину</p>
                         <Input
@@ -107,7 +109,7 @@ export const CreateCustomSize = ({ setCreateCustomSizeModal }) => {
                     </label>
                 </div>
 
-                <button className='btn inverted' onClick={handleSaveNewSize}>
+                <button className='btn inverted w-460:mx-auto' onClick={handleSaveNewSize}>
                     Создать
                 </button>
             </div >

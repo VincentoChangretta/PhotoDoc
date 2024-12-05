@@ -5,6 +5,7 @@ import { MainServices } from './MainServices/MainServices';
 import { MainSteps } from './MainSteps/MainSteps';
 import { MainFAQ } from './MainQuestionsAnswers/MainFAQ';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
+import { Contacts } from '../Global/Contacts';
 
 export const Main = () => {
     useScrollToTop()
@@ -15,6 +16,7 @@ export const Main = () => {
             <MainSteps />
             <MainFAQ />
             <MainServices />
+            <Contacts />
         </>
     );
 }

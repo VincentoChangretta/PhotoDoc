@@ -17,7 +17,7 @@ export const MainServices = () => {
                     <div className="section-content max-w-[1150px] ">
                         <div className='flex gap-[30px] w-1160:flex-col'>
                             {MainServicesArr.map(service => (
-                                <div key={service.id} className='bg-gray p-[30px] rounded-elementRounded'>
+                                <div key={service.id} className='bg-invertedTextColor p-[30px] rounded-elementRounded shadow-cardShadow'>
                                     <MainServicesBlock service={service} />
                                 </div>
                             ))}

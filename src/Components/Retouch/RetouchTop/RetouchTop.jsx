@@ -33,10 +33,10 @@ export const RetouchTop = () => {
                 <div>
                     <h3 className='text-3xl text-center font-extrabold mb-[40px]'>Особенности заказа</h3>
                     <div className='flex gap-[30px] flex-wrap justify-center'>
-                        <p className='p-[30px] max-w-[800px] bg-invertedTextColor rounded-elementRounded shadow-cardShadow'>
+                        <p className='p-[30px] max-w-[800px] bg-invertedTextColor rounded-elementRounded shadow-xl'>
                             Красота – дело вкуса, и каждый видит ее по-своему. Поэтому перед тем, как заказать ретушь для фото, обязательно расскажите мастеру о своих предпочтениях. Или оставьте обработку фото на наше усмотрение!
                         </p>
-                        <p className='p-[30px] max-w-[800px] bg-invertedTextColor rounded-elementRounded shadow-cardShadow'>
+                        <p className='p-[30px] max-w-[800px] bg-invertedTextColor rounded-elementRounded shadow-xl'>
                             Помните, что качество изображения задается при съемке, поэтому его нельзя улучшить при последующей обработке. Это значит, что сделать фото с телефона четким и резким невозможно, а из бытовой непрофессиональной фотографии вряд ли получится снимок как «на обложку журнала». Но это не помешает нам исправить недостатки и заретушировать неудачные моменты фото. Обратившись к нам, вы получите качественно обработанные фотографии, которые смогут украсить Вашу домашнюю коллекцию или Ваш профиль в социальной сети.
                         </p>
                     </div>

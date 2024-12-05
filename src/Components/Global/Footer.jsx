@@ -5,7 +5,7 @@ import { PATHNAMES } from '../../../public/AppData';
 
 export const Footer = () => {
     return (
-        <footer className='pt-[35px]'>
+        <footer className='py-[35px]'>
             <div className="container">
                 <div className="inner w-1290:flex-wrap">
                     <Logo className="grow basis-0 w-600:text-center" />

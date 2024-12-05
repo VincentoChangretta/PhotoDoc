@@ -14,6 +14,7 @@ import { currentDeliveryDateReducer } from "./currentDeliveryDate";
 import { currentDeliveryAddressReducer } from "./currentDeliveryAddressReducer";
 import { currentCliendPhotoCodeReducer } from "./currentCliendPhotoCodeReducer";
 import { currentInModalFormReducer } from "./currentInModalFormReducer";
+import { currentOrderByCodeReducer } from "./currentOrderByCode";
 
 const rootReduser = combineReducers({
   currentSize: currentSizeReducer,
@@ -29,6 +30,7 @@ const rootReduser = combineReducers({
   currentDeliveryAddress: currentDeliveryAddressReducer,
   currentClientPhotoCode: currentCliendPhotoCodeReducer,
   currentModalFormState: currentInModalFormReducer, 
+  currentOrderByCode: currentOrderByCodeReducer,
 });
 
 export const store = createStore(
