@@ -45,6 +45,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
         }
     }, [])
 
+
     return (
         <div className='flex items-center justify-center w-full min-h-[50svh]'>
             <form
@@ -91,8 +92,8 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                             !orderByCodeState
                                 ? <InputFile fileInput={fileInput} setFileInput={setFileInput} />
                                 : <div
-                                    className='p-[20px] rounded-elementRounded bg-textColor text-invertedTextColor text-base truncate'>
-                                    Фото из архива - {orderByCodeState}
+                                    className='p-[20px] rounded-elementRounded bg-textColor text-invertedTextColor text-lg truncate text-center'>
+                                    Фото по коду: {orderByCodeState}
                                     <input
                                         readOnly
                                         className='hidden'
@@ -122,31 +123,40 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                                 <input readOnly name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
                             </>
                         }
-                        <input readOnly name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
+                        {
+                            !orderByCodeState &&
+                            <input readOnly name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
+                        }
                     </div>
                     <div className='flex flex-col justify-between gap-[20px]'>
                         <div className='flex flex-col gap-[15px] p-[30px] bg-grayHover rounded-elementRounded w-1520:items-center w-460:p-[15px]'>
-                            <button
-                                type='button'
-                                className='btn'
-                                onClick={e => !currentPhotoCode ? (e.stopPropagation(), setSavePhotoModal(true)) : null}>
-                                {currentPhotoCode
-                                    ? <>
-                                        <span>Фото будет сохранено</span>
-                                        <FontAwesomeIcon className='text-xl ml-[10px]' icon={faCheck} />
-                                    </>
-                                    : <>
-                                        <span>Сохранить фото в базу</span>
-                                        <FontAwesomeIcon className='text-xl ml-[10px]' icon={faSave} />
-                                    </>
-                                }
-                            </button>
+
+                            {
+                                !orderByCodeState ? (
+                                    <button
+                                        type='button'
+                                        className='btn'
+                                        onClick={e => !currentPhotoCode ? (e.stopPropagation(), setSavePhotoModal(true)) : null}>
+                                        {currentPhotoCode ? (
+                                            <>
+                                                <span>Фото будет сохранено</span>
+                                                <FontAwesomeIcon className='text-xl ml-[10px]' icon={faCheck} />
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span>Сохранить фото в базу</span>
+                                                <FontAwesomeIcon className='text-xl ml-[10px]' icon={faSave} />
+                                            </>
+                                        )}
+                                    </button>
+                                ) : null
+                            }
                             <button
                                 type='button'
                                 className='btn'
                                 onClick={e => (e.stopPropagation(), setInfoModal(true))}
                             >
-                                Информация о заказе
+                                О заказе
                                 <FontAwesomeIcon className='ml-[10px] text-xl' icon={faCircleInfo} />
                             </button>
                         </div>

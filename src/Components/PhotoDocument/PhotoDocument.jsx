@@ -8,6 +8,7 @@ import { useScrollToTop } from '../../Hooks/useScrollToTop';
 import { OrderByCode } from '../Global/OrderByCode';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteOrderByCode } from '../../Redux/currentOrderByCode';
+import { delClientPhotoCode } from '../../Redux/currentCliendPhotoCodeReducer';
 
 export const PhotoDocument = () => {
   const dispatch = useDispatch()
@@ -15,6 +16,10 @@ export const PhotoDocument = () => {
   const [orderByCode, setOrderByCode] = useState(null)
   const orderByCodeState = useSelector(state => state.currentOrderByCode.code)
   useScrollToTop()
+  const handleDeleteCode = () => {
+    dispatch(deleteOrderByCode())
+    dispatch(delClientPhotoCode())
+  }
   return (
     <>
       <section className='photodocument'>
@@ -37,7 +42,7 @@ export const PhotoDocument = () => {
                       Заказать из архива
                     </button>
                   </>
-                  : <button className='btn' onClick={() => dispatch(deleteOrderByCode())}>Печать новых фотографий</button>
+                  : <button className='btn' onClick={handleDeleteCode}>Печать новых фотографий</button>
               }
             </div>
             <MainInfoPhoto photoDocPage={true} />
