@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Main } from './Main/Main';
 import { PhotoDocument } from './PhotoDocument/PhotoDocument';
 import { PATHNAMES } from '../../public/AppData';
@@ -33,6 +33,8 @@ export const Navigation = () => {
                     <Route path={PATHNAMES.delivery} element={<Delivery />} />
                     <Route path={PATHNAMES.privacyPolicy} element={<PrivacyPolicy />} />
                     <Route path={PATHNAMES.supportProject} element={<SupportProject />} />
+                    <Route path={PATHNAMES.supportProject} element={<SupportProject />} />
+                    <Route path='*' element={<Navigate to="/" replace />} />
                 </Routes>
                 {promoCodeModal && <PromoCode />}
             </promoCodeModalContext.Provider>
