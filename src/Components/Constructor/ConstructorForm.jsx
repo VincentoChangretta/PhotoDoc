@@ -92,7 +92,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                                 ? <InputFile fileInput={fileInput} setFileInput={setFileInput} />
                                 : <div
                                     className='p-[20px] rounded-elementRounded bg-textColor text-invertedTextColor text-base truncate'>
-                                    Фотография из архива - {orderByCodeState}
+                                    Фото из архива - {orderByCodeState}
                                     <input
                                         readOnly
                                         className='hidden'
@@ -115,8 +115,13 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                         <input readOnly name="photo-cloth" type="text" value={cloth} />
                         <input readOnly name="photo-color" type="text" value={color} />
                         <input readOnly name="photo-price" type="text" value={price} />
-                        <input readOnly name='photo-deliveryDate' type="text" value={currentDeliveryDate} />
-                        <input readOnly name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
+                        {
+                            currentPhotoStore.type.physicalType &&
+                            <>
+                                <input readOnly name='photo-deliveryDate' type="text" value={currentDeliveryDate} />
+                                <input readOnly name='photo-deliveryTime' type="text" value={currentDeliveryTime} />
+                            </>
+                        }
                         <input readOnly name='photo-saveCode' type="text" value={`${currentDeliveryDate}_${currentPhotoCode}`} />
                     </div>
                     <div className='flex flex-col justify-between gap-[20px]'>
