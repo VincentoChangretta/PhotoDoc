@@ -45,7 +45,7 @@ export const MainTopSlider = () => {
     }, [])
 
     return (
-        <div className='flex justify-end gap-[30px] max-w-[1100px] w-full card-container'>
+        <div className='flex justify-end gap-[30px] max-w-[1100px] w-full card-container w-1630:max-w-[1000px]'>
             {mainTopImgArr.map((imgObject, index) => {
                 const baseClass = 'img-box';
                 const indexClass = `img-box-${index + 1}` || 'img-box-1'

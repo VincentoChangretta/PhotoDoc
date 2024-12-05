@@ -16,7 +16,7 @@ export const Restoration = () => {
     return (
         <>
             <RestorationTop />
-            {ModalFormState && ModalFormData && <ModalForm data={ModalFormData} />}
+            {ModalFormState && ModalFormData && <ModalForm service="реставрация" data={ModalFormData} />}
         </>
     );
 }

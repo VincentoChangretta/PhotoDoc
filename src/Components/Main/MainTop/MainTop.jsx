@@ -6,7 +6,6 @@ import { Search } from '../../Global/Search';
 import { mainImg } from '../../../../public/ImgData';
 
 export const MainTop = () => {
-
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(() => {

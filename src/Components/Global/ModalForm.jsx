@@ -9,7 +9,7 @@ import { handleSubmit } from '../../../public/functions';
 import { ModalCloser } from './ModalCloser';
 import { HiddenSenderInputs } from './HiddenSenderInputs';
 
-export const ModalForm = ({ data }) => {
+export const ModalForm = ({ service, data }) => {
     const formRef = useRef(null)
     const [privacyCheckbox, setPrivacyCheckbox] = useState(null)
     const [infoCheckbox, setInfoPrivacyCheckbox] = useState(null)
@@ -65,9 +65,8 @@ export const ModalForm = ({ data }) => {
                         required={true}
                     />
                     <InputFile fileInput={fileInput} setFileInput={setFileInput} />
-                    <div className='hidden'>
-                        <input readOnly name="price" type="text" value={`от ${data.price + RUBLE}`} />
-                    </div>
+                    <input className='hidden' readOnly name="price" type="text" value={`от ${data.price + RUBLE}`} />
+                    <input className='hidden' readOnly name="service" type="text" value={service} />
                     <div className='max-w-[450px] raletive p-[20px] bg-invertedTextColor text-textColor rounded-elementRounded w-560:p-[10px]'>
                         <CheckboxVerification
                             errorStatus={privacyError}

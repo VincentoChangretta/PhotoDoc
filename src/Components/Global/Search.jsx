@@ -15,7 +15,7 @@ export const Search = () => {
     const [isFocused, setIsFocused] = useState(false);
     const strings = ['Фото на паспорт', 'Ретушь фотографий', 'Реставрация фотографий']
     const [textInArrayCur, setTextInArrayCur] = useState(0)
-    const [debouncedSearch] = useDebounce(searchInput.value, 20);
+    const [debouncedSearch] = useDebounce(searchInput.value, 10);
     const placeholderText = useTypingAnimation(
         strings,
         textInArrayCur,

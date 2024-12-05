@@ -14,7 +14,7 @@ export const Retouch = () => {
     return (
         <>
             <RetouchTop />
-            {ModalFormState && ModalFormData && <ModalForm data={ModalFormData} />}
+            {ModalFormState && ModalFormData && <ModalForm service="ретушь" data={ModalFormData} />}
         </>
     );
 }

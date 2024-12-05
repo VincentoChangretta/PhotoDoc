@@ -75,7 +75,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                         />
                         <Input
                             name="phone"
-                            type="text"
+                            type="number"
                             placeholder="Ваш номер телефона"
                             required={currentPhotoStore.type.physicalType}
                         />
