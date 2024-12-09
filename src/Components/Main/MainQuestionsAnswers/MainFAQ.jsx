@@ -43,7 +43,7 @@ export const MainFAQ = () => {
               <div
                 className="transition-all duration-300 pr-[30px] overflow-hidden"
                 style={{
-                  maxHeight: activeQuestions.includes(item.id) ? '150px' : '0px', // Показываем ответ, если ID в массиве
+                  maxHeight: activeQuestions.includes(item.id) ? '250px' : '0px', // Показываем ответ, если ID в массиве
                   paddingBottom: activeQuestions.includes(item.id) ? '16px' : '0', // Добавляем отступы только для активного элемента
                 }}
               >
