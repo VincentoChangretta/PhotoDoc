@@ -65,7 +65,6 @@ export const AboutUsTop = () => {
                         </p>
                     </div>
                 </div>
- 
             </div>
         </section>
     );

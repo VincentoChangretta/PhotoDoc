@@ -3,6 +3,7 @@ import { OrderInformation } from '../../Global/OrderInformation';
 import { ConstructorForm } from '../../Constructor/ConstructorForm';
 import { useSelector } from 'react-redux';
 import { SavePhotoModal } from '../../Global/SavePhotoModal';
+import { OrderCodeGenerator } from '../../Global/OrderCodeGenerator';
 
 export const OrderTop = () => {
     const {
@@ -21,6 +22,7 @@ export const OrderTop = () => {
     } = useSelector(state => state.currentPhotoCloth)
     const [infoModal, setInfoModal] = useState(null);
     const [savePhotoModal, setSavePhotoModal] = useState(null)
+    const [orderCodeGenerator, setOrderCodeGenerator] = useState(null)
     const currentPhotoStore = {
         photoInfo: currentPhotoDocInBasket,
         color: currentPhotoColor,
@@ -50,10 +52,12 @@ export const OrderTop = () => {
                         currentPhotoStore={currentPhotoStore}
                         setInfoModal={setInfoModal}
                         setSavePhotoModal={setSavePhotoModal}
+                        setOrderCodeGenerator={setOrderCodeGenerator}
                     />
                 </div>
                 {infoModal && <OrderInformation currentPhotoStore={currentPhotoStore} setInfoModal={setInfoModal} />}
                 {savePhotoModal && <SavePhotoModal setSavePhotoModal={setSavePhotoModal} />}
+                {orderCodeGenerator && <OrderCodeGenerator setOrderCodeGenerator={setOrderCodeGenerator} />}
             </div>
         </section>
     );

@@ -13,13 +13,14 @@ import { TextArea } from '../UI/TextArea';
 import { PHOTO_COLOR_COLORED, PHOTO_COLOR_COLORLESS, RUBLE } from '../../../public/AppData';
 import { HiddenSenderInputs } from '../Global/HiddenSenderInputs';
 
-export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoModal }) => {
+export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoModal, setOrderCodeGenerator }) => {
     const [fileInput, setFileInput] = useState(null)
     const [privacyCheckbox, setPrivacyCheckbox] = useState(null)
     const [infoCheckbox, setInfoPrivacyCheckbox] = useState(null)
     const [privacyError, setPrivacyError] = useState("")
     const [infoError, setInfoError] = useState("")
     const [fetchedDescr, setFetchedDescr] = useState(null)
+    
     const {
         currentDeliveryDate,
         currentDeliveryTime,
@@ -37,6 +38,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
     const price = currentPhotoStore.photoInfo.price + RUBLE
     const electroPhoto = currentPhotoStore.type.electroType ? currentPhotoStore.quantity.electroQuantity : 0
     const physicalPhoto = currentPhotoStore.type.physicalType ? currentPhotoStore.quantity.physicalQuantity : 0
+    const documentPhoto = true
 
     useEffect(() => {
         if (currentPhotoStore.photoInfo.info.id !== prevPhoto?.id) {
@@ -61,7 +63,9 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                         setPrivacyError,
                         infoError,
                         setInfoError,
-                        setFileInput
+                        setFileInput,
+                        setOrderCodeGenerator,
+                        documentPhoto,
                     )
                 }
                 className={classes.form}

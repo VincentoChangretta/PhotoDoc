@@ -5,8 +5,6 @@ import { PATHNAMES } from '../../../public/AppData';
 
 export const CheckboxVerification = ({ stateChanger, infoCheckbox, errorStatus }) => {
 
-
-
   return (
     <div className={`${errorStatus ? `bg-errorColor` : ''} relative flex max-w-[400px] pl-[40px] pr-[15px] py-[7px] select-none  rounded-elementRounded transition-bg`}>
       <label className='cursor-pointer'>

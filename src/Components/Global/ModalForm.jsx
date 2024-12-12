@@ -79,7 +79,7 @@ export const ModalForm = ({ service, data }) => {
                         />
                     </div>
                     <button className='btn inverted'>Заказать</button>
-                    {fetchedDescr && <p>Заказ успешно оформлен!</p>}
+                    {fetchedDescr && <p className='text-xs'>Заказ успешно оформлен! <br /> В скором времени мы свяжемся с вами для уточнения заказа</p>}
                 </div>
             </form>
         </div>

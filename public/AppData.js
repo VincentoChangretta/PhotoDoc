@@ -11,8 +11,11 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const links = {
-  telegram: "https://www.google.com",
+  telegram: "https://t.me/photodoc39",
+  whatsapp: "https://wa.me/79527964873",
 };
+
+export const MY_INN = 391707085408
 
 export const PHOTODOC = "Фото на документ";
 

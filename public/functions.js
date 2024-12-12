@@ -10,7 +10,7 @@ export const fetchToMail = async (e, form) => {
       body: formData,
     });
     if (response.ok) {
-      console.log('sended');
+      console.log("sended");
       form.reset();
       return true;
     } else {
@@ -25,22 +25,28 @@ export const fetchToMail = async (e, form) => {
 export const handleSubmit = async (
   e,
   form,
-  setFetchedModal,
+  setFetchedDescr,
   privacyCheckbox,
   infoCheckbox,
   privacyError,
   setPrivacyError,
   infoError,
   setInfoError,
-  setFileInput
+  setFileInput,
+  setOrderCodeGenerator,
+  documentPhoto
 ) => {
   e.preventDefault();
   const formData = fetchToMail(e, form);
   if (formData && privacyCheckbox && infoCheckbox) {
     privacyError ? setPrivacyError(false) : null;
     infoError ? setInfoError(false) : null;
-    setFetchedModal(true);
-    setTimeout(() => setFetchedModal(false), 4500);
+    if (documentPhoto) {
+      setOrderCodeGenerator(true);
+    } else {
+      setFetchedDescr(true);
+      setTimeout(() => setFetchedDescr(false), 4500);
+    }
   } else if (!privacyCheckbox && !infoCheckbox) {
     setPrivacyError(true);
     setInfoError(true);
@@ -76,9 +82,25 @@ export const calculateElectroFormat = () => {
   return electroQuantity && electroType ? currentSize.priceOnline : 0;
 };
 
-export const createFullDate = date => {
+export const createFullDate = (date, code) => {
   const day = String(date.getDate()).padStart(2, "0");
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = date.getFullYear();
-  return `${day}-${month}-${year}`
-}
+  if (code) {
+    return `${day}/${month}`;
+  } else {
+    return `${day}-${month}-${year}`;
+  }
+};
+
+export const generateOrderCode = () => {
+  const fullDate = createFullDate(new Date(), true);
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let randomLetters = "";
+  for (let i = 0; i < 5; i++) {
+    const randomIndex = Math.floor(Math.random() * letters.length);
+    randomLetters += letters[randomIndex];
+  }
+  const code = `${fullDate}-${randomLetters}`;
+  return code;
+};

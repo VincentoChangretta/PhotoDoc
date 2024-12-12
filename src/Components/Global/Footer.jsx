@@ -12,6 +12,7 @@ export const Footer = () => {
                     <ul className='flex gap-[30px] w-1050:hidden'>
                         <li><Link to={PATHNAMES.recommendations}>Рекомендации</Link></li>
                         <li><Link to={PATHNAMES.delivery}>Доставка</Link></li>
+                        <li><Link to={PATHNAMES.oferta}>Оферта</Link></li>  
                         <li><Link to={PATHNAMES.supportProject}>Поддержать проект</Link></li>  
                     </ul>
                     <div className="grow basis-0 text-right w-600:hidden">
