@@ -15,6 +15,7 @@ import Restoration2 from "../src/Images/restoration1.webp";
 import Retouch1 from "../src/Images/retouchAnim.webp";
 import Retouch2 from "../src/Images/retouchAnim1.webp";
 import mainImg from "../src/Images/mainImg.webp";
+import nyBg from "../src/Images/nybg.webp";
 
 export {
   docImg,
@@ -34,4 +35,5 @@ export {
   Retouch1,
   Retouch2,
   mainImg,
+  nyBg,
 };

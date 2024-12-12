@@ -88,7 +88,7 @@ export const WHATS_APP = "WhatsApp";
 
 export const promoCodeData = [
   {
-    code: "PhotoDoc",
+    code: "2025",
     discount: 15,
   },
   {

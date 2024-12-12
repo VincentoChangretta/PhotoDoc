@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        textColor: "#934248",
+        textColor: "#934248", 
         textColorOpacity: "rgba(112,50,55,0.5)",
         textColorHover: "#703237",
         textColorDoubleHover: "#542629",
@@ -61,6 +61,7 @@ export default {
         "w-1200": { max: "1200px" },
         "w-1160": { max: "1160px" },
         "w-1150": { max: "1150px" },
+        "w-1080": { max: "1080px" },
         "w-1050": { max: "1050px" },
         "w-930": { max: "930px" },
         "w-820": { max: "820px" },
@@ -73,6 +74,7 @@ export default {
         "w-560": { max: "560px" },
         "w-540": { max: "540px" },
         "w-500": { max: "500px" },
+        "w-480": { max: "480px" },
         "w-460": { max: "460px" },
         "w-420": { max: "420px" },
         "w-385": { max: "385px" },

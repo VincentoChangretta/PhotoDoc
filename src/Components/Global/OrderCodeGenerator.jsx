@@ -22,8 +22,8 @@ export const OrderCodeGenerator = ({ setOrderCodeGenerator }) => {
                 <ModalCloser closeModal={setOrderCodeGenerator} />
                 <h2 className='text-2xl text-center font-extrabold mb-[20px]'>Заказ успешно оформлен!</h2>
                 <div className='flex flex-col gap-[15px] mb-[20px] w-420:text-base'>
-                    <p>В ближайшее время мы свяжемся с вами мессенджерах для подтверждения заказа</p>
-                    <p>Пожалуйста, подтвердите заказ отправив нам код заказа</p>
+                    <p>В ближайшее время мы свяжемся с вами в мессенджерах для подтверждения заказа</p>
+                    <p>Пожалуйста, подтвердите заказ, отправив нам код заказа</p>
                     <h2 className='p-[15px] text-xl text-center bg-invertedTextColor rounded-elementRounded text-textColor w-420:text-lg'>Код заказа - <strong>{generateOrderCode()}</strong></h2>
                     <strong className='text-center'>Настоятельно рекомендуем сохранить код до получения заказа!</strong>
                 </div>

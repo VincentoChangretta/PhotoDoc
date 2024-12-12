@@ -1,0 +1,3 @@
+.timer-item{
+    @apply flex flex-col gap-[5px] text-center p-[10px] rounded-[15px] backdrop-blur text-invertedTextColor w-[130px] border-[1px] border-solid border-glassBorderColor w-630:w-[100px] leading-none w-500:gap-[2px] w-480:p-[7px] w-480:w-[80px] w-385:w-[65px];
+}

@@ -104,7 +104,7 @@ export const Constructor = () => {
                     <h3>Выберите количество и тип фотографий</h3>
                 </div>
                 <div className='flex flex-col '>
-                    <div className={`flex justify-between mb-[70px] min-h-[550px] w-1200:gap-[40px] transition-all  w-1200:flex-col w-1200:relative ${getPaddingClass(photoQuantity)}`}>
+                    <div className={`flex justify-between mb-[70px] min-h-[550px] w-1200:gap-[40px] w-1200:flex-col w-1200:relative ${getPaddingClass(photoQuantity)}`}>
                         {
                             !screen1200
                                 ? <>
