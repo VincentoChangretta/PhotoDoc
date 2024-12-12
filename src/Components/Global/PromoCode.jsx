@@ -5,6 +5,7 @@ import { promoCodeData } from '../../../public/AppData';
 import { useDispatch } from 'react-redux';
 import { photoDocPromoCodeAction } from '../../Redux/currentPromoCodeReducer';
 import { ModalCloser } from './ModalCloser';
+import { changePromocodeValueCreator } from '../../Redux/currentPromocodeValueReducer';
 
 export const PromoCode = () => {
     const { setPromoCodeModal } = useContext(promoCodeModalContext)
@@ -34,6 +35,7 @@ export const PromoCode = () => {
             if (findedPromoCode) {
                 setPromoCodeModal(false)
                 dispatch(photoDocPromoCodeAction(findedPromoCode.discount))
+                dispatch(changePromocodeValueCreator(result))
             } else {
                 setErrorText("Неверный промокод!")
                 setNotFound(true)

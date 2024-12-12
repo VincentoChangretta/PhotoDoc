@@ -112,6 +112,7 @@ export const PATHNAMES = {
   delivery: "/delivery",
   privacyPolicy: "/privacy-policy",
   supportProject: "/support-project",
+  oferta: "/oferta",
 };
 
 export const TYPES = {

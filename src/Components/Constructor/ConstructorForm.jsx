@@ -14,9 +14,6 @@ import { PHOTO_COLOR_COLORED, PHOTO_COLOR_COLORLESS, RUBLE } from '../../../publ
 import { HiddenSenderInputs } from '../Global/HiddenSenderInputs';
 
 export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoModal }) => {
-
-    const currentPhotoCode = useSelector(state => state.currentClientPhotoCode.code)
-    const prevPhoto = useSelector(state => state.previousPhotoDoc.previousPhotoSize)
     const [fileInput, setFileInput] = useState(null)
     const [privacyCheckbox, setPrivacyCheckbox] = useState(null)
     const [infoCheckbox, setInfoPrivacyCheckbox] = useState(null)
@@ -27,7 +24,10 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
         currentDeliveryDate,
         currentDeliveryTime,
     } = useSelector(state => state.currentDeliveryDate);
+    const currentPhotoCode = useSelector(state => state.currentClientPhotoCode.code)
+    const prevPhoto = useSelector(state => state.previousPhotoDoc.previousPhotoSize)
     const orderByCodeState = useSelector(state => state.currentOrderByCode.code)
+    const currentPromocodeValue = useSelector(state => state.currentPromocodeValue.promocode)
     const formRef = useRef(null)
     const dispatch = useDispatch()
 
@@ -65,7 +65,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                     )
                 }
                 className={classes.form}
-                enctype="multipart/form-data"
+                encType="multipart/form-data"
             >
                 <HiddenSenderInputs />
                 <div className='flex gap-[50px] mb-[20px] w-1520:flex-wrap w-1520:justify-center w-1050:gap-[20px]'>
@@ -116,6 +116,7 @@ export const ConstructorForm = ({ currentPhotoStore, setInfoModal, setSavePhotoM
                         <input readOnly name="photo-cloth" type="text" value={cloth} />
                         <input readOnly name="photo-color" type="text" value={color} />
                         <input readOnly name="photo-price" type="text" value={price} />
+                        {currentPromocodeValue && <input readOnly name="promocode" type="text" value={currentPromocodeValue} />}
                         {
                             currentPhotoStore.type.physicalType &&
                             <>

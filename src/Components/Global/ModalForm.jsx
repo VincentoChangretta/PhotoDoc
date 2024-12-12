@@ -42,7 +42,7 @@ export const ModalForm = ({ service, data }) => {
                 }
                 onClick={e => e.stopPropagation()}
                 className='relative max-w-[510px] p-[30px] bg-textColor text-invertedTextColor rounded-elementRounded w-560:p-[20px]'
-                enctype="multipart/form-data"
+                encType="multipart/form-data"
             >
                 <HiddenSenderInputs />
                 <ModalCloser closeModal={() => dispatch(closeFormModalCreator())} />

@@ -13,6 +13,7 @@ import { AboutUs } from './AboutUs/AboutUs';
 import { Delivery } from './Delivery/Delivery';
 import { PrivacyPolicy } from './PrivacyPolicy/PrivacyPolicy';
 import { SupportProject } from './Cooperation/SupportProject';
+import { Oferta } from './Oferta/Oferta';
 
 export const promoCodeModalContext = createContext("no provider")
 
@@ -33,7 +34,7 @@ export const Navigation = () => {
                     <Route path={PATHNAMES.delivery} element={<Delivery />} />
                     <Route path={PATHNAMES.privacyPolicy} element={<PrivacyPolicy />} />
                     <Route path={PATHNAMES.supportProject} element={<SupportProject />} />
-                    <Route path={PATHNAMES.supportProject} element={<SupportProject />} />
+                    <Route path={PATHNAMES.oferta} element={<Oferta />} />
                     <Route path='*' element={<Navigate to="/" replace />} />
                 </Routes>
                 {promoCodeModal && <PromoCode />}
