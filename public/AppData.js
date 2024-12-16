@@ -95,6 +95,10 @@ export const promoCodeData = [
     code: "vcDevs",
     discount: 10,
   },
+  {
+    code: "Furina",
+    discount: 15,
+  },
 ];
 
 export const ATTENTION_DATA = {
